@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rocketship changelog</title>
+<style>
+  body { font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #1f2328; background: #fff; margin: 0; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .lede { color: #59636e; margin: 0 0 40px; }
+  h2 { font-size: 20px; margin: 48px 0 8px; padding-top: 24px; border-top: 1px solid #d1d9e0; }
+  h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: #59636e; margin: 20px 0 6px; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  .anchor { display: none; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6edf3; background: #0d1117; }
+    .lede, h3 { color: #9198a1; }
+    h2 { border-color: #3d444d; }
+  }
+</style>
+</head>
+<body>
+<main>
+<h1>Rocketship changelog</h1>
+<p class="lede">Changes to the Rocketship web app, newest first. Updated automatically with each release.</p>
+<div class="markdown-heading"><h2 class="heading-element">Update — November 4, 2026, 11:37 PM</h2><a id="user-content-update--november-4-2026-1137-pm" class="anchor" aria-label="Permalink: Update — November 4, 2026, 11:37 PM" href="#update--november-4-2026-1137-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">November 4, 2026</h3><a id="user-content-november-4-2026" class="anchor" aria-label="Permalink: November 4, 2026" href="#november-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Test the automatic changelog</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">Update — November 4, 2026, 11:32 PM</h2><a id="user-content-update--november-4-2026-1132-pm" class="anchor" aria-label="Permalink: Update — November 4, 2026, 11:32 PM" href="#update--november-4-2026-1132-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">November 4, 2026</h3><a id="user-content-november-4-2026-1" class="anchor" aria-label="Permalink: November 4, 2026" href="#november-4-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Publish a GitHub Release with the new commits on each push to main</li>
+<li>Intake key: distinct error codes the app can show</li>
+<li>Intake API: shared device key instead of a staff login, for now</li>
+<li>Add sea freight dimension fields (length, width, height) and validate edits up front</li>
+<li>Add VoidOctober2026PointsAbuse console command</li>
+<li>Fix negative points redemption and make redemption atomic</li>
+<li>Add Intake iPad setup and label reprint endpoints to API v1</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">November 2, 2026</h3><a id="user-content-november-2-2026" class="anchor" aria-label="Permalink: November 2, 2026" href="#november-2-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Remove raw DB::raw wrapper from staff discount report query</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">October 2026</h2><a id="user-content-october-2026" class="anchor" aria-label="Permalink: October 2026" href="#october-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">October 31, 2026</h3><a id="user-content-october-31-2026" class="anchor" aria-label="Permalink: October 31, 2026" href="#october-31-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Drop SVG from incident image upload allowlist</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 29, 2026</h3><a id="user-content-october-29-2026" class="anchor" aria-label="Permalink: October 29, 2026" href="#october-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add employee stats tiles and role breakdown to user admin</li>
+<li>Remove the accounts cutover runbook, migration notes, and drift CSVs</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 28, 2026</h3><a id="user-content-october-28-2026" class="anchor" aria-label="Permalink: October 28, 2026" href="#october-28-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Remove the unused layouts/app view and its Bootstrap Sass build</li>
+<li>Split React screens out of app.js and load one jQuery in admin layouts</li>
+<li>Migrate frontend build from Laravel Mix 4 to Mix 6 with webpack 5</li>
+<li>Move kiosk page background from App.css into kiosk layout; topbar gets a background</li>
+<li>Stream sales CSV exports instead of building them in memory</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 27, 2026</h3><a id="user-content-october-27-2026" class="anchor" aria-label="Permalink: October 27, 2026" href="#october-27-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add section and branch filters to weight distribution report</li>
+<li>Fix mobile sidebar layout and remove old dashboard view</li>
+<li>Replace Bootstrap admin navbar with custom top bar and sidebar layout</li>
+<li>Flag unflagged high-value packages at custody scan</li>
+<li>Remove debug Log calls and dead code, delete IPG and PowerTranz.bak helpers</li>
+<li>Remove custom password broker min-length override</li>
+<li>Remove debug logging from notification jobs and helper</li>
+<li>Fix IPG helper namespace and remove package-lock.json</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 26, 2026</h3><a id="user-content-october-26-2026" class="anchor" aria-label="Permalink: October 26, 2026" href="#october-26-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Restyle package create form flags as colored toggle tiles</li>
+<li>Add Tailwind utilities, theme CSS, and shell/UI JS bundles</li>
+<li>Receive packages for accounts whose login was deleted</li>
+<li>Add Tailwind CSS 3.4 build setup and lockfile updates</li>
+<li>Use absolute asset paths in site layouts and drop dead source map refs</li>
+<li>Add onOneServer to scheduled tasks and make cache store configurable</li>
+<li>Add receiving page, sidebar link, and receiver relation</li>
+<li>Add background AJAX package save with inline label PDF reply</li>
+<li>Fix package label and invoice previews blocked by X-Frame-Options</li>
+<li>Remove broken black-dashboard.min.js script tag from base layout</li>
+<li>Consolidate duplicate route names into match() and drop redundant named routes</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 25, 2026</h3><a id="user-content-october-25-2026" class="anchor" aria-label="Permalink: October 25, 2026" href="#october-25-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add maintenance banner for customer pages via config flag</li>
+<li>Email an alert when a queued job fails</li>
+<li>Queue jobs and mailables only after the surrounding transaction commits</li>
+<li>Remove the nightly points report</li>
+<li>Read settings through config instead of env() outside config files</li>
+<li>Read the points report's queue backlog through the queue connection</li>
+<li>Move PHPUnit doc-comment metadata to attributes</li>
+<li>Upgrade to Laravel 12</li>
+<li>Upgrade to Laravel 11</li>
+<li>Upgrade to Laravel 10</li>
+<li>Add legacy 5.7 remember-me cookie acceptance until 2026-12-31</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 23, 2026</h3><a id="user-content-october-23-2026" class="anchor" aria-label="Permalink: October 23, 2026" href="#october-23-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Keep payment-linked deliveries as cancelled instead of deleting them on checkin</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 24, 2026</h3><a id="user-content-october-24-2026" class="anchor" aria-label="Permalink: October 24, 2026" href="#october-24-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Switch PDF templates to public_path and logo-full-color-pdf.png</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 23, 2026</h3><a id="user-content-october-23-2026-1" class="anchor" aria-label="Permalink: October 23, 2026" href="#october-23-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Remove unused AWS endpoint config and add Laravel Cloud disk note</li>
+<li>Move incident, invoice, and product images to object storage</li>
+<li>Pin the MySQL session time zone to Jamaica</li>
+<li>Add sessions and cache tables for the database drivers</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 22, 2026</h3><a id="user-content-october-22-2026" class="anchor" aria-label="Permalink: October 22, 2026" href="#october-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add npm build script with the OpenSSL legacy flag</li>
+<li>Store sea freight volume from feed dimensions, show dimensions on view</li>
+<li>Upgrade to Laravel 9</li>
+<li>Drop unused pusher/pusher-php-server</li>
+<li>Run on PHP 8 (keeping PHP 7.4 working)</li>
+<li>Upgrade to Laravel 8</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 21, 2026</h3><a id="user-content-october-21-2026" class="anchor" aria-label="Permalink: October 21, 2026" href="#october-21-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Upgrade to Laravel 7</li>
+<li>Upgrade to Laravel 6</li>
+<li>Upgrade to Laravel 5.8</li>
+<li>Restyle package create form flags as colored toggle tiles</li>
+<li>Call mailSeaFreightPayload before validation in package controller</li>
+<li>Call mailSeaFreightPayload before validation in package controller</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 20, 2026</h3><a id="user-content-october-20-2026" class="anchor" aria-label="Permalink: October 20, 2026" href="#october-20-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Show activity timestamps as date with relative time</li>
+<li>Add high-value flag to packages: super-admin toggle on package view</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 17, 2026</h3><a id="user-content-october-17-2026" class="anchor" aria-label="Permalink: October 17, 2026" href="#october-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Enforce ownership on delivery, package, and checkout routes</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 15, 2026</h3><a id="user-content-october-15-2026" class="anchor" aria-label="Permalink: October 15, 2026" href="#october-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>feat: show customs C number on package view</li>
+<li>Record package custody scans from the RS25 Custody tab</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 13, 2026</h3><a id="user-content-october-13-2026" class="anchor" aria-label="Permalink: October 13, 2026" href="#october-13-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add dangerous goods export (CSV/XLSX/PDF) and date-range filter</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 11, 2026</h3><a id="user-content-october-11-2026" class="anchor" aria-label="Permalink: October 11, 2026" href="#october-11-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add a delivery-only flag to branches</li>
+<li>Rename "Branch Reports" to "Branch Tools" in admin views and sidebar</li>
+<li>Add active-state pill styling to admin sidebar links</li>
+<li>Move Customers and Delivery into own sidebar sections, add Driver</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 10, 2026</h3><a id="user-content-october-10-2026" class="anchor" aria-label="Permalink: October 10, 2026" href="#october-10-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add branches:verify and make the branch normalisation self-reverting</li>
+<li>Center-align pay tile amount inputs</li>
+<li>Redesign checkout payment buttons as colored tiles with amount inputs</li>
+<li>Store branch codes everywhere, resolved through the branches table</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 9, 2026</h3><a id="user-content-october-9-2026" class="anchor" aria-label="Permalink: October 9, 2026" href="#october-9-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Rework sidebar sections and remove the Analytics page</li>
+<li>Group admin sidebar links into sections by task</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 8, 2026</h3><a id="user-content-october-8-2026" class="anchor" aria-label="Permalink: October 8, 2026" href="#october-8-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Show activity timestamps as date with relative time</li>
+<li>Make admin tables scroll sideways on mobile</li>
+<li>Add active-state pill styling to admin sidebar links</li>
+<li>Swap flame icon for battery on Dangerous Goods sidebar link</li>
+<li>Kiosk: require confirmation before switching branch</li>
+<li>Kiosk: require confirmation before switching branch</li>
+<li>Require kiosk branch selection on launch instead of defaulting to VILLAGE</li>
+<li>Add Inactive Accounts branch report with CSV/Excel/PDF export</li>
+<li>Add inactive accounts report with CSV/Excel/PDF export</li>
+<li>Add active-state pill styling to admin sidebar links</li>
+<li>Add Lucide icon support to admin sidebar via @icon directive</li>
+<li>Add card payment reconciliation: manual settle/close from transaction page</li>
+<li>Add branch reports page with checkin status labels</li>
+<li>Add online transactions CSV/Excel export with shared filters</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 7, 2026</h3><a id="user-content-october-7-2026" class="anchor" aria-label="Permalink: October 7, 2026" href="#october-7-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Replace unlimited memory limit with 2048M in report controllers</li>
+<li>Add GCT to handling fee in calculator and rates</li>
+<li>Extract partner summary into shared partial, add to transactions</li>
+<li>Move online transactions viewer from tools to reports</li>
+<li>Add customer sign-up drill-down from dashboard sparkline bars</li>
+<li>Add created index for points statements</li>
+<li>Skip points statements for dormant customers (6+ months inactive)</li>
+<li>Support sea freight pricing by volume with dedicated cu_ft column</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 6, 2026</h3><a id="user-content-october-6-2026" class="anchor" aria-label="Permalink: October 6, 2026" href="#october-6-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Compare only elapsed days when the sales report range runs past today</li>
+<li>Tone down the previous-year badge on the sales report</li>
+<li>Add change vs previous year on the sales report</li>
+<li>Compare whole months against whole months on the sales report</li>
+<li>Label the previous period on the sales report</li>
+<li>Show change vs previous period on sales report</li>
+<li>Track refund creator and display in admin</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 4, 2026</h3><a id="user-content-october-4-2026" class="anchor" aria-label="Permalink: October 4, 2026" href="#october-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Style navy account buttons with solid ink</li>
+<li>Restyle delivery list with package row component</li>
+<li>Restyle receipt list with package row component</li>
+<li>Extract cardmark styles to separate stylesheet</li>
+<li>Display card brand marks in payment receipts</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 3, 2026</h3><a id="user-content-october-3-2026" class="anchor" aria-label="Permalink: October 3, 2026" href="#october-3-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Restructure form checkboxes for accessibility and theme support</li>
+<li>Add compact issued display for coupon list, full details on show page</li>
+<li>Add coupon issuance tracking with admin attribution and filtering</li>
+<li>Allow multiple coupon redemptions per customer</li>
+<li>Add coupon creation form and code export</li>
+<li>Add coupon claim links and shareable cards</li>
+<li>Add coupon show page with redemption history and batch stats</li>
+<li>Remove account delivery view</li>
+<li>Add express pickups to unified check-in</li>
+<li>Add express pickups to unified check-in</li>
+<li>Add deliveries and receipts tabs with independent pagination</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">October 1, 2026</h3><a id="user-content-october-1-2026" class="anchor" aria-label="Permalink: October 1, 2026" href="#october-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Bump CSS versions for the PowerTranz styles</li>
+<li>Fix online card totals on the date-only report filter</li>
+<li>Fix navbar layout and remove rocket label text</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 23, 2026</h3><a id="user-content-september-23-2026" class="anchor" aria-label="Permalink: September 23, 2026" href="#september-23-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Meet PowerTranz website and receipt requirements</li>
+<li>Check delivery ownership on cancel, reschedule and delete</li>
+<li>Remove users.branch_code, route all branch reads through accounts</li>
+<li>Adapt production's branch reads to the dropped name columns</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 22, 2026</h3><a id="user-content-september-22-2026" class="anchor" aria-label="Permalink: September 22, 2026" href="#september-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Replace branch_name with branch() relation</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 20, 2026</h3><a id="user-content-september-20-2026" class="anchor" aria-label="Permalink: September 20, 2026" href="#september-20-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add receipt display and payment method branding</li>
+<li>Remove user name fallback from card form field</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 19, 2026</h3><a id="user-content-september-19-2026" class="anchor" aria-label="Permalink: September 19, 2026" href="#september-19-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Redesign receipt view with grid-based card layout and improved styling</li>
+<li>Display gateway transaction details on receipt</li>
+<li>Display payment gateway logos on receipt</li>
+<li>Add payment instrument styling and redesign receipt</li>
+<li>Implement customer receipt listing and PDF download</li>
+<li>Implement PayPal reconciliation and server-side capture</li>
+<li>Implement card payment reconciliation sweep</li>
+<li>Implement Lynk reconciliation and extract settlement logic</li>
+<li>Remove payTest smoke test, add card payment instrument tests</li>
+<li>Drop the folded callback_note column</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 18, 2026</h3><a id="user-content-september-18-2026" class="anchor" aria-label="Permalink: September 18, 2026" href="#september-18-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Make transactions record the account that paid and the instrument used</li>
+<li>Generalise the transactions ledger across gateways</li>
+<li>Adopt dashboard styling for delivery and card forms</li>
+<li>Refactor PowerTranz and track online card payments</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">September 2026</h2><a id="user-content-september-2026" class="anchor" aria-label="Permalink: September 2026" href="#september-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">September 30, 2026</h3><a id="user-content-september-30-2026" class="anchor" aria-label="Permalink: September 30, 2026" href="#september-30-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Schedule daily points report at midnight</li>
+<li>Remove old points schedule report in favor of V2</li>
+<li>Schedule month-end points expiry and consolidate logic to PointsLedger</li>
+<li>Speed up push broadcasts with concurrent delivery</li>
+<li>Add admin push notification tool</li>
+<li>Disable till payment options when the sale is already paid online</li>
+<li>Let prepaid packages check out at the till without a tender</li>
+<li>Add GiftMe payment option to the cashier till</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 29, 2026</h3><a id="user-content-september-29-2026" class="anchor" aria-label="Permalink: September 29, 2026" href="#september-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add other reason type with custom description</li>
+<li>Include only collected packages in checkout receipts</li>
+<li>Remove clear all checkins feature</li>
+<li>Replace journey scroll animation with live tracking console</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 23, 2026</h3><a id="user-content-september-23-2026-1" class="anchor" aria-label="Permalink: September 23, 2026" href="#september-23-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Resync user branch from primary account</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 22, 2026</h3><a id="user-content-september-22-2026-1" class="anchor" aria-label="Permalink: September 22, 2026" href="#september-22-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Use AccountBranch helper for account-aware branch reporting</li>
+<li>Detect blocked cookies in curbside check-in</li>
+<li>Implement curbside check-in with vehicle details</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 21, 2026</h3><a id="user-content-september-21-2026" class="anchor" aria-label="Permalink: September 21, 2026" href="#september-21-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Resync account branch from users</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 20, 2026</h3><a id="user-content-september-20-2026-1" class="anchor" aria-label="Permalink: September 20, 2026" href="#september-20-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add quick actions for bulk package delivery and payment</li>
+<li>Redesign package list with accessible status chips and eager loading</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 19, 2026</h3><a id="user-content-september-19-2026-1" class="anchor" aria-label="Permalink: September 19, 2026" href="#september-19-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Replace whereDate with DayRange for index-friendly filtering</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 18, 2026</h3><a id="user-content-september-18-2026-1" class="anchor" aria-label="Permalink: September 18, 2026" href="#september-18-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add package ID to warehouse board display</li>
+<li>Show disabled package action reason on hover</li>
+<li>Release packages from deleted check-ins and stabilize timer display</li>
+<li>Allow deleting check-ins from cashier queue without sale</li>
+<li>Track check-in completion with status and cashier ID</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 17, 2026</h3><a id="user-content-september-17-2026" class="anchor" aria-label="Permalink: September 17, 2026" href="#september-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Show package ID in checkin view and enable asset cache busting</li>
+<li>Show deleted customer status in account and package views</li>
+<li>Refactor email templates to use base layout inheritance</li>
+<li>Drop redundant activity indexes and shrink columns</li>
+<li>Require refund amount and separate from payout currency</li>
+<li>Add filtering to package activity history</li>
+<li>Fix checkout payment linking to collected packages</li>
+<li>Expand payment branch aliases for report grouping</li>
+<li>Make the cashier list more concise on payment reports.</li>
+<li>Add RecoverLynkPayments console command</li>
+<li>Add last activity timestamp to admin dashboard</li>
+<li>Add yesterday preset to admin report date range</li>
+<li>Seed new account email from user</li>
+<li>Add the 16 Sep PayPal export used for the outage recovery</li>
+<li>Refuse PayPal rows without a transaction id in recovery</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 16, 2026</h3><a id="user-content-september-16-2026" class="anchor" aria-label="Permalink: September 16, 2026" href="#september-16-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Restore Payment::claim and add PayPal outage recovery</li>
+<li>Add last activity timestamp to admin dashboard</li>
+<li>Display delivery creation timestamp</li>
+<li>Display delivery creation timestamp</li>
+<li>Read points from user wallet instead of account</li>
+<li>Add air/sea freight filtering to unprocessed packages</li>
+<li>Set payment branch at creation; optimize backfill chunking</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 15, 2026</h3><a id="user-content-september-15-2026" class="anchor" aria-label="Permalink: September 15, 2026" href="#september-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Fix btn-default label readability on hover/focus/active</li>
+<li>Display branch code on package details</li>
+<li>Gate self-serve account creation behind feature flag</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 14, 2026</h3><a id="user-content-september-14-2026" class="anchor" aria-label="Permalink: September 14, 2026" href="#september-14-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Use account branch code for account page check-ins</li>
+<li>Make customer lookup return accounts instead of users</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 10, 2026</h3><a id="user-content-september-10-2026" class="anchor" aria-label="Permalink: September 10, 2026" href="#september-10-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Remove unused inspire command and Inspiring import</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 9, 2026</h3><a id="user-content-september-9-2026" class="anchor" aria-label="Permalink: September 9, 2026" href="#september-9-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add the Phase 9 cutover runbook</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 8, 2026</h3><a id="user-content-september-8-2026" class="anchor" aria-label="Permalink: September 8, 2026" href="#september-8-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Move the payments user_id repair out of the migration into a command</li>
+<li>Add invoice authorization and account-scoped preferences</li>
+<li>Order the shipment exports by package id explicitly</li>
+<li>Sort the clearance list by mailbox name, not login name</li>
+<li>Add the [D6] drift guard so nobody has to remember to look</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 7, 2026</h3><a id="user-content-september-7-2026" class="anchor" aria-label="Permalink: September 7, 2026" href="#september-7-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Close the reporting group - five of six were never defects</li>
+<li>Consolidate the three account documents into one authority</li>
+<li>Add the two Phase 8 tests that guard the cutover</li>
+<li>Reconcile the migration plan against the code</li>
+<li>Close the last checklist item - receipts landed in 1cd0a1d</li>
+<li>Resolve an email lookup by rule instead of by row order</li>
+<li>Attribute every payment to the mailbox that was settled</li>
+<li>Scope checkout receipts to recipient's own packages</li>
+<li>Fix checkout payment linking to collected packages</li>
+<li>Key checkins and settlement by account instead of login</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 6, 2026</h3><a id="user-content-september-6-2026" class="anchor" aria-label="Permalink: September 6, 2026" href="#september-6-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Defer notification emails until settlement commits, handle errors</li>
+<li>Guard against deleted referrers in referral processing</li>
+<li>Make points wallets per-login, shared across mailboxes</li>
+<li>Delete migration adding account_id to points tables</li>
+<li>Restore direct user relations and sync user_id with accounts</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 5, 2026</h3><a id="user-content-september-5-2026" class="anchor" aria-label="Permalink: September 5, 2026" href="#september-5-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Make package reassignment and refunds account-aware</li>
+<li>Make exports and admin views account-aware</li>
+<li>Route FCM notifications to mailbox owner and personalize greetings</li>
+<li>Make manifests and invoices account-aware with user fallback</li>
+<li>Replace login-scoped auth checks with account-aware policies</li>
+<li>Attribute packages and child records to accounts, not logins</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 4, 2026</h3><a id="user-content-september-4-2026" class="anchor" aria-label="Permalink: September 4, 2026" href="#september-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Fix checkout payment linking to collected packages</li>
+<li>Add active state styling to main navigation links</li>
+<li>Redesign welcome email template for improved layout and clarity</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 3, 2026</h3><a id="user-content-september-3-2026" class="anchor" aria-label="Permalink: September 3, 2026" href="#september-3-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add daily drill-down and caching to points schedule report</li>
+<li>Add Points Schedule V2 report with rolling 12-month expiration</li>
+<li>Fix status breakdown visibility in shipment view</li>
+<li>Add status 27 to clearing and fix breakdown display logic</li>
+<li>Add status breakdown grouping to shipment view</li>
+<li>Add receivedInMiamiPackages tracking to shipment view</li>
+<li>Standardize page titles across views</li>
+<li>Standardize page titles across views</li>
+<li>Refactor FAQs with search, category filters, and accordion design</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 2, 2026</h3><a id="user-content-september-2-2026" class="anchor" aria-label="Permalink: September 2, 2026" href="#september-2-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add active state styling to main navigation links</li>
+<li>Add active state styling to main navigation links</li>
+<li>Add admin tools section with navigation and routes</li>
+<li>Add contact form validation and redesign contact page</li>
+<li>Redesign footer with organized grid layout and styling</li>
+<li>Improve careers empty state design and messaging</li>
+<li>Simplify careers page forms and styling</li>
+<li>Separate processing fees from handling fees in sea freight reporting</li>
+<li>Reorganize sales report layout with freight breakdowns</li>
+<li>Add date range validation to sales reports</li>
+<li>Extract date range inputs to partial</li>
+<li>Add Other category to sales split for reconciliation</li>
+<li>Add tooltips to sales categories and tighten tiles layout</li>
+<li>Reorganize sales report layout with freight breakdowns</li>
+<li>Add Other category to sales split for reconciliation</li>
+<li>Add delayed packages count to admin shipment index</li>
+<li>Optimize sales report with async freight queries and packages export</li>
+<li>Simplify delayed package notification message</li>
+<li>Move Turnstile widgets below submit buttons with styling</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">September 1, 2026</h3><a id="user-content-september-1-2026" class="anchor" aria-label="Permalink: September 1, 2026" href="#september-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add Turnstile CAPTCHA to public forms</li>
+<li>Set registration channel on user creation</li>
+<li>Add careers feature with job postings and applications</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 31, 2026</h3><a id="user-content-august-31-2026" class="anchor" aria-label="Permalink: August 31, 2026" href="#august-31-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add registration rate limiting and honeypot component</li>
+</ul>
+<div class="markdown-heading"><h2 class="heading-element">August 2026</h2><a id="user-content-august-2026" class="anchor" aria-label="Permalink: August 2026" href="#august-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<div class="markdown-heading"><h3 class="heading-element">August 31, 2026</h3><a id="user-content-august-31-2026-1" class="anchor" aria-label="Permalink: August 31, 2026" href="#august-31-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Backfill incident report account IDs</li>
+<li>Resolve refunds to accounts with legacy user fallback</li>
+<li>Scope incidents and refunds to accounts</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 30, 2026</h3><a id="user-content-august-30-2026" class="anchor" aria-label="Permalink: August 30, 2026" href="#august-30-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Backfill account email from users table</li>
+<li>Add phone field to Account; resolve metadata through accounts</li>
+<li>Extract account descriptors into DescribesAccount trait</li>
+<li>Scope deliveries to accounts with user fallback for legacy rows</li>
+<li>Display tracking numbers in delivery confirmation email</li>
+<li>Scope pickup packages to active account and display tracking numbers</li>
+<li>Require active account when creating deliveries</li>
+<li>Scope delivery packages to active account and display tracking numbers</li>
+<li>Refactor dormancy check across customer accounts</li>
+<li>Persist cashier branch filter across page reloads</li>
+<li>Position account_id columns after related foreign keys</li>
+<li>Override theme button hover styling</li>
+<li>Add package reweigh feature with automatic charge recalculation</li>
+<li>Refactor package detail view with custom styling</li>
+<li>Add package detail view to checkout</li>
+<li>Add weight column to checkout verification</li>
+<li>Switch warehouse feed to resolve accounts instead of users</li>
+<li>Report sea freight statistics by account instead of user</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 29, 2026</h3><a id="user-content-august-29-2026" class="anchor" aria-label="Permalink: August 29, 2026" href="#august-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Remove new accounts metric from branch report</li>
+<li>Report branch statistics by account instead of user</li>
+<li>Report aged uncollected packages per account instead of user</li>
+<li>Replace inline setState with selectPackage method</li>
+<li>Update checkout receipt email subject and filename</li>
+<li>Send checkout receipts to account mailboxes</li>
+<li>Use asset helper for checkout receipt logo URL</li>
+<li>Restructure checkout receipt to use table layout for email clients</li>
+<li>Send checkout receipts to account mailboxes</li>
+<li>Fix the formating of the pickup section of the accounts page</li>
+<li>Add check-in from account view with warehouse/cashier routing</li>
+<li>Redirect checkin index to warehouse and move list to separate route</li>
+<li>Add cashier feed polling and redesigned checkout UI</li>
+<li>Add chime notifications and empty state components</li>
+<li>Remove Pusher real-time broadcast functionality</li>
+<li>Mute cancel button on accepted check-in cards</li>
+<li>Fix formatting and layout of the warehouse board cards.</li>
+<li>Guard check-in state on status instead of worker_id</li>
+<li>Add check-in status and warehouse board actions</li>
+<li>Highlight shelf location and display weight on warehouse board</li>
+<li>Refactor check-in feed to use polling API with branch filtering</li>
+<li>Scope kiosk checkin to accounts with mailbox support</li>
+<li>Seed account email and phone from login address</li>
+<li>Scope partner admin from users to accounts</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 28, 2026</h3><a id="user-content-august-28-2026" class="anchor" aria-label="Permalink: August 28, 2026" href="#august-28-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Remove login fallback from package mailbox column</li>
+<li>Paginate packages and permission-gate revenue totals</li>
+<li>Display account name and mailbox in package exports</li>
+<li>Display account name and mailbox in admin package list</li>
+<li>Move account actions to top and balance customer info cards</li>
+<li>Refactor admin customer section to separate users and accounts</li>
+<li>Route notifications to account email instead of user email</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 27, 2026</h3><a id="user-content-august-27-2026" class="anchor" aria-label="Permalink: August 27, 2026" href="#august-27-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add account-level notification email and preferences</li>
+<li>Move mailbox name above number and apply flat variant</li>
+<li>Inline card actions and make package filters optional</li>
+<li>Move points balance from header chip to content card</li>
+<li>Move mailbox card from nav to page headers</li>
+<li>Rename settings routes to accounts and add navy theme</li>
+<li>Allow users to open additional mailbox accounts</li>
+<li>Add account switcher to mailbox card</li>
+<li>Add login and password editors to settings page</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 26, 2026</h3><a id="user-content-august-26-2026" class="anchor" aria-label="Permalink: August 26, 2026" href="#august-26-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Consolidate editor exit logic into EditScreen utility</li>
+<li>Move account editing from modal to dedicated screen</li>
+<li>Add account name field to refunds</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 25, 2026</h3><a id="user-content-august-25-2026" class="anchor" aria-label="Permalink: August 25, 2026" href="#august-25-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add sea freight report to admin dashboard</li>
+<li>Clean up driver tool nav bar</li>
+<li>Center brand logo in driver admin topbar</li>
+<li>Extract delivery closure operations into trait and add driver controller</li>
+<li>Extract account options and add account selection to settings</li>
+<li>Scope customer data to active account instead of login</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 22, 2026</h3><a id="user-content-august-22-2026" class="anchor" aria-label="Permalink: August 22, 2026" href="#august-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Fix package branch_code to use user record instead of account</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 20, 2026</h3><a id="user-content-august-20-2026" class="anchor" aria-label="Permalink: August 20, 2026" href="#august-20-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add usage donut chart and 7-day signup history to admin dashboard</li>
+<li>Split mobile platform tracking to distinguish iOS and Android</li>
+<li>Prevent duplicate refunds by tracking number</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 19, 2026</h3><a id="user-content-august-19-2026" class="anchor" aria-label="Permalink: August 19, 2026" href="#august-19-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Adjust admin dashboard grid layout</li>
+<li>Add platform icons to admin dashboard usage display</li>
+<li>Track platform usage and display on admin dashboard</li>
+<li>Require tracking number when no package selected</li>
+<li>Support refunds for packages that never arrived at warehouse</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 18, 2026</h3><a id="user-content-august-18-2026" class="anchor" aria-label="Permalink: August 18, 2026" href="#august-18-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Refactor branch selection to modal dialog</li>
+<li>Make kiosk interface responsive with fluid sizing and media queries</li>
+<li>Add RCJ data conversion plan</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 17, 2026</h3><a id="user-content-august-17-2026" class="anchor" aria-label="Permalink: August 17, 2026" href="#august-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Phase 3: active-account context, middleware, switcher and policies [D5]</li>
+<li>Add TRANSIT_HQ status to unprocessed packages logic</li>
+<li>Use user branch code instead of account branch code</li>
+<li>P1.12: add accounts:verify instead of the specified backfill migration</li>
+<li>P1.3: add account_id to payments [D4]</li>
+<li>P1.4a steps 1-2: stage the Lynk column rename on transactions</li>
+<li>P1.10: add account_id indexes mirroring the user_id ones</li>
+<li>P1.6/P1.7: add account_id to refunds and authorized_people</li>
+<li>P1.1/P1.2/P1.5: add account_id to deliveries, pickups and orders</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 16, 2026</h3><a id="user-content-august-16-2026" class="anchor" aria-label="Permalink: August 16, 2026" href="#august-16-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>P1.8: move saved addresses to accounts [D2]</li>
+<li>P1.9: move loyalty points to accounts [D1]</li>
+<li>P1.11: add is_primary to accounts with a one-primary-per-user constraint</li>
+<li>Fix IDOR in address and authorized-person delete endpoints</li>
+<li>Add account migration plan</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 15, 2026</h3><a id="user-content-august-15-2026" class="anchor" aria-label="Permalink: August 15, 2026" href="#august-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Update storage begins calculation to 31 days in package reminder email</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 14, 2026</h3><a id="user-content-august-14-2026" class="anchor" aria-label="Permalink: August 14, 2026" href="#august-14-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Fix malformed a tag</li>
+<li>Update storage begins calculation to 31 days in package reminder email</li>
+<li>Change default pickup branch to East Kings House Road</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 13, 2026</h3><a id="user-content-august-13-2026" class="anchor" aria-label="Permalink: August 13, 2026" href="#august-13-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Redesign admin package index with eager loading</li>
+<li>Redesign customer index page with improved layout and styling</li>
+<li>Format the JMD and USD number figures. on accounts</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 12, 2026</h3><a id="user-content-august-12-2026" class="anchor" aria-label="Permalink: August 12, 2026" href="#august-12-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Update accounts when customer branch changes</li>
+<li>Add Dumbarton branch to customer branch selector</li>
+<li>Refine admin package view styling and layout</li>
+<li>Reorganize filters to grid layout with status dropdown</li>
+<li>Add status filtering and export to unprocessed packages</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 11, 2026</h3><a id="user-content-august-11-2026" class="anchor" aria-label="Permalink: August 11, 2026" href="#august-11-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add dangerous goods package notifications</li>
+<li>Lock refund payout currency to JMD, set by admin at creation</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 10, 2026</h3><a id="user-content-august-10-2026" class="anchor" aria-label="Permalink: August 10, 2026" href="#august-10-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add export functionality for aged-uncollected report</li>
+<li>Add dangerous goods bulk shipment assignment</li>
+<li>Add east_kings to checkin filter choices</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 5, 2026</h3><a id="user-content-august-5-2026" class="anchor" aria-label="Permalink: August 5, 2026" href="#august-5-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Modernize admin customer and package views with improved styling</li>
+<li>Remove customs charges functionality</li>
+<li>Add east_kings to checkin filter choices</li>
+<li>Add east_kings to checkin filter choices</li>
+<li>Remove Space Grotesk from font stacks</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 4, 2026</h3><a id="user-content-august-4-2026" class="anchor" aria-label="Permalink: August 4, 2026" href="#august-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Hide Request Refund option in package view</li>
+<li>Hide value row on the customer package details</li>
+<li>Hide Request Refund option in package view</li>
+<li>Hide Request Refund option in package view</li>
+<li>Centralize package status filters and add UI navigation</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 3, 2026</h3><a id="user-content-august-3-2026" class="anchor" aria-label="Permalink: August 3, 2026" href="#august-3-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Update navbar logo to LogoInlineColorWhite</li>
+<li>Add top padding to customer page content</li>
+<li>Refactor navbar navigation with active state detection</li>
+<li>Redesign shipping cost calculator page</li>
+<li>Add package activities to package detail screen for customers.</li>
+<li>Redesign activity timeline with day bands</li>
+<li>Added branch code card to the dashboard view</li>
+<li>Fix MailboxResolver handling of mailbox ID 0</li>
+<li>Refresh customer facing view designs</li>
+<li>Add package status validation and normalize to uppercase</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 2, 2026</h3><a id="user-content-august-2-2026" class="anchor" aria-label="Permalink: August 2, 2026" href="#august-2-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Update mobile auth logo to colored version</li>
+<li>Add landing page typography with Space Grotesk and Space Mono</li>
+<li>Redesign auth pages with new layout and styling</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">August 1, 2026</h3><a id="user-content-august-1-2026" class="anchor" aria-label="Permalink: August 1, 2026" href="#august-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Hide Request Refund option in package view</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 31, 2026</h3><a id="user-content-july-31-2026" class="anchor" aria-label="Permalink: July 31, 2026" href="#july-31-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add permission-based admin dashboard with stats tiles</li>
+<li>Remove permission creation from admin UI</li>
+<li>Add role detail page and redesign permissions UI</li>
+<li>Filter payment report queries by branch aliases</li>
+<li>Hide pick-up menu item from admin sidebar</li>
+<li>Move admin logo to fixed sidebar on desktop</li>
+<li>Filter payment report queries by branch aliases</li>
+<li>Handle branch name aliases in payment reports</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 30, 2026</h3><a id="user-content-july-30-2026" class="anchor" aria-label="Permalink: July 30, 2026" href="#july-30-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Center shipment title and simplify navigation styling</li>
+<li>Add navigation between shipments in admin view</li>
+<li>Add branch to payment records</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 29, 2026</h3><a id="user-content-july-29-2026" class="anchor" aria-label="Permalink: July 29, 2026" href="#july-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Handle Lynk payment type in checkout payment reset</li>
+<li>Prevent double-charging prepaid deliveries and fix Lynk payment handling</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 28, 2026</h3><a id="user-content-july-28-2026" class="anchor" aria-label="Permalink: July 28, 2026" href="#july-28-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Prevent double submission of checkout forms</li>
+<li>Make checkouts idempotent with database transactions</li>
+<li>Extract shared staff discount query method</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 24, 2026</h3><a id="user-content-july-24-2026" class="anchor" aria-label="Permalink: July 24, 2026" href="#july-24-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add 6 month and 1 year filters to aged uncollected report</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 23, 2026</h3><a id="user-content-july-23-2026" class="anchor" aria-label="Permalink: July 23, 2026" href="#july-23-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Update East Kings House branch opening hours</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 22, 2026</h3><a id="user-content-july-22-2026" class="anchor" aria-label="Permalink: July 22, 2026" href="#july-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Consolidate inventory methods into aged uncollected report</li>
+<li>Disable high-value packages menu and routes</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 21, 2026</h3><a id="user-content-july-21-2026" class="anchor" aria-label="Permalink: July 21, 2026" href="#july-21-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add Branch Code column to custodial log PDF</li>
+<li>Add Branch Code column to custodial log PDF</li>
+<li>Add Branch Code column to custodial log PDF</li>
+<li>Remove high value items card from shipment view</li>
+<li>Add custodial log PDF download for high-value shipments</li>
+<li>Remove table horizontal scroll on medium screens and larger</li>
+<li>Remove table horizontal scroll on medium screens and larger</li>
+<li>Hide journey rail on small screens</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 17, 2026</h3><a id="user-content-july-17-2026" class="anchor" aria-label="Permalink: July 17, 2026" href="#july-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add vehicle motion, smoke effects, and ambient animations to flat-hero</li>
+<li>Refactor journey animation from scroll-driven to timer-based</li>
+<li>Polish deliveries page layout and styling</li>
+<li>Implement custom PDF export with Blade template</li>
+<li>Add delivery export with CSV, XLSX and PDF formats</li>
+<li>Add status, date filters and export to high-value packages</li>
+<li>Add null coalescing to payment ID variables</li>
+<li>Disable scroll-driven animation, use timed loop for all devices</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 16, 2026</h3><a id="user-content-july-16-2026" class="anchor" aria-label="Permalink: July 16, 2026" href="#july-16-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add close button to error alert in QR config</li>
+<li>Add payment ID search to admin report</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 15, 2026</h3><a id="user-content-july-15-2026" class="anchor" aria-label="Permalink: July 15, 2026" href="#july-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add refund request and management system</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 14, 2026</h3><a id="user-content-july-14-2026" class="anchor" aria-label="Permalink: July 14, 2026" href="#july-14-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Style customs number as badge in customs recon report</li>
+<li>Style customs number as badge in customs recon report</li>
+<li>Add customs duty fee application with splitting</li>
+<li>Add id to ready packages table</li>
+<li>Improve location delete button styling and confirmation</li>
+<li>Add delivery location creation and deletion</li>
+<li>Style customs number as badge in customs recon report</li>
+<li>Add Customs Recon report with CSV/XLSX export</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">July 1, 2026</h3><a id="user-content-july-1-2026" class="anchor" aria-label="Permalink: July 1, 2026" href="#july-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Add status 28 to detained statuses</li>
+</ul>
+<div class="markdown-heading"><h3 class="heading-element">June 26, 2026</h3><a id="user-content-june-26-2026" class="anchor" aria-label="Permalink: June 26, 2026" href="#june-26-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
+<ul>
+<li>Revert "Conditionally load Tailwind CDN to prevent browser freezes"</li>
+<li>Conditionally load Tailwind CDN to prevent browser freezes</li>
+</ul>
+</main>
+</body>
+</html>
