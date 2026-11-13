@@ -5,20 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rocketship changelog</title>
 <style>
-  body { font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         color: #1f2328; background: #fff; margin: 0; }
-  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
-  h1 { font-size: 28px; margin: 0 0 4px; }
-  .lede { color: #59636e; margin: 0 0 40px; }
-  h2 { font-size: 20px; margin: 48px 0 8px; padding-top: 24px; border-top: 1px solid #d1d9e0; }
-  h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: #59636e; margin: 20px 0 6px; }
-  ul { margin: 0; padding-left: 20px; }
-  li { margin: 3px 0; }
-  .anchor { display: none; }
+  :root { --fg: #1f2328; --muted: #59636e; --line: #d1d9e0; --soft: #eef1f4;
+          --bg: #fff; --add: #1a7f37; --del: #cf222e; }
   @media (prefers-color-scheme: dark) {
-    body { color: #e6edf3; background: #0d1117; }
-    .lede, h3 { color: #9198a1; }
-    h2 { border-color: #3d444d; }
+    :root { --fg: #e6edf3; --muted: #9198a1; --line: #3d444d; --soft: #262c33;
+            --bg: #0d1117; --add: #3fb950; --del: #f85149; }
+  }
+  body { font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: var(--fg); background: var(--bg); margin: 0; }
+  main { max-width: 980px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .lede { color: var(--muted); margin: 0 0 32px; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { text-align: left; font-size: 12px; font-weight: 600; text-transform: uppercase;
+             letter-spacing: .05em; color: var(--muted); padding: 0 12px 8px;
+             border-bottom: 2px solid var(--line); }
+  td, tbody th { padding: 9px 12px; vertical-align: top; border-top: 1px solid var(--soft); }
+  tr.first > * { border-top: 1px solid var(--line); }
+  .date { width: 230px; text-align: left; font-weight: 600; white-space: nowrap; }
+  .diff, thead .diff { width: 120px; text-align: right; white-space: nowrap;
+                       font-variant-numeric: tabular-nums; font-size: 13px; }
+  .add { color: var(--add); }
+  .del { color: var(--del); margin-left: 6px; }
+  .none { color: var(--muted); }
+  code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace;
+         background: var(--soft); padding: 1px 4px; border-radius: 4px; }
+  @media (max-width: 640px) {
+    thead { display: none; }
+    table, tbody, tr, td { display: block; }
+    tbody th.date { display: none; }
+    tr { padding: 10px 0; border-top: 1px solid var(--soft); }
+    td { border: 0 !important; padding: 0; }
+    tr.first { border-top: 1px solid var(--line); margin-top: 8px; }
+    tr.first td.msg::before { content: attr(data-date); display: block; font-weight: 600;
+                              margin-bottom: 6px; }
+    .diff { text-align: left; margin-top: 2px; }
   }
 </style>
 </head>
@@ -26,778 +47,474 @@
 <main>
 <h1>Rocketship changelog</h1>
 <p class="lede">Changes to the Rocketship web app, newest first. Updated automatically with each release.</p>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 11, 2026, 6:53 PM</h2><a id="user-content-update--november-11-2026-653-pm" class="anchor" aria-label="Permalink: Update — November 11, 2026, 6:53 PM" href="#update--november-11-2026-653-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 11, 2026</h3><a id="user-content-november-11-2026" class="anchor" aria-label="Permalink: November 11, 2026" href="#november-11-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Fix staff report to query packages joined to receiving users</li>
-<li>Add customer ranking report link to admin dashboard</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 10, 2026, 1:05 PM</h2><a id="user-content-update--november-10-2026-105-pm" class="anchor" aria-label="Permalink: Update — November 10, 2026, 1:05 PM" href="#update--november-10-2026-105-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 10, 2026</h3><a id="user-content-november-10-2026" class="anchor" aria-label="Permalink: November 10, 2026" href="#november-10-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Replace quote request form with calculator sea-mode links</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 6, 2026, 4:45 PM</h2><a id="user-content-update--november-6-2026-445-pm" class="anchor" aria-label="Permalink: Update — November 6, 2026, 4:45 PM" href="#update--november-6-2026-445-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 6, 2026</h3><a id="user-content-november-6-2026" class="anchor" aria-label="Permalink: November 6, 2026" href="#november-6-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add intake photo upload and label_data to the intake API</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 6, 2026, 1:14 PM</h2><a id="user-content-update--november-6-2026-114-pm" class="anchor" aria-label="Permalink: Update — November 6, 2026, 1:14 PM" href="#update--november-6-2026-114-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 6, 2026</h3><a id="user-content-november-6-2026-1" class="anchor" aria-label="Permalink: November 6, 2026" href="#november-6-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Reprint package labels from the creation page via in-place print</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 6, 2026, 1:09 PM</h2><a id="user-content-update--november-6-2026-109-pm" class="anchor" aria-label="Permalink: Update — November 6, 2026, 1:09 PM" href="#update--november-6-2026-109-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 6, 2026</h3><a id="user-content-november-6-2026-2" class="anchor" aria-label="Permalink: November 6, 2026" href="#november-6-2026-2"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Replace recent-packages table with per-login list on creation page</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 6, 2026, 12:54 PM</h2><a id="user-content-update--november-6-2026-1254-pm" class="anchor" aria-label="Permalink: Update — November 6, 2026, 12:54 PM" href="#update--november-6-2026-1254-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 6, 2026</h3><a id="user-content-november-6-2026-3" class="anchor" aria-label="Permalink: November 6, 2026" href="#november-6-2026-3"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Switch PDF logos and receipt brand images to PdfImage::src</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 4, 2026, 11:48 PM</h2><a id="user-content-update--november-4-2026-1148-pm" class="anchor" aria-label="Permalink: Update — November 4, 2026, 11:48 PM" href="#update--november-4-2026-1148-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 4, 2026</h3><a id="user-content-november-4-2026" class="anchor" aria-label="Permalink: November 4, 2026" href="#november-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Publish the changelog to a public page</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 4, 2026, 11:37 PM</h2><a id="user-content-update--november-4-2026-1137-pm" class="anchor" aria-label="Permalink: Update — November 4, 2026, 11:37 PM" href="#update--november-4-2026-1137-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 4, 2026</h3><a id="user-content-november-4-2026-1" class="anchor" aria-label="Permalink: November 4, 2026" href="#november-4-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Test the automatic changelog</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">Update — November 4, 2026, 11:32 PM</h2><a id="user-content-update--november-4-2026-1132-pm" class="anchor" aria-label="Permalink: Update — November 4, 2026, 11:32 PM" href="#update--november-4-2026-1132-pm"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">November 4, 2026</h3><a id="user-content-november-4-2026-2" class="anchor" aria-label="Permalink: November 4, 2026" href="#november-4-2026-2"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Publish a GitHub Release with the new commits on each push to main</li>
-<li>Intake key: distinct error codes the app can show</li>
-<li>Intake API: shared device key instead of a staff login, for now</li>
-<li>Add sea freight dimension fields (length, width, height) and validate edits up front</li>
-<li>Add VoidOctober2026PointsAbuse console command</li>
-<li>Fix negative points redemption and make redemption atomic</li>
-<li>Add Intake iPad setup and label reprint endpoints to API v1</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">November 2, 2026</h3><a id="user-content-november-2-2026" class="anchor" aria-label="Permalink: November 2, 2026" href="#november-2-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Remove raw DB::raw wrapper from staff discount report query</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">October 2026</h2><a id="user-content-october-2026" class="anchor" aria-label="Permalink: October 2026" href="#october-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">October 31, 2026</h3><a id="user-content-october-31-2026" class="anchor" aria-label="Permalink: October 31, 2026" href="#october-31-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Drop SVG from incident image upload allowlist</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 29, 2026</h3><a id="user-content-october-29-2026" class="anchor" aria-label="Permalink: October 29, 2026" href="#october-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add employee stats tiles and role breakdown to user admin</li>
-<li>Remove the accounts cutover runbook, migration notes, and drift CSVs</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 28, 2026</h3><a id="user-content-october-28-2026" class="anchor" aria-label="Permalink: October 28, 2026" href="#october-28-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Remove the unused layouts/app view and its Bootstrap Sass build</li>
-<li>Split React screens out of app.js and load one jQuery in admin layouts</li>
-<li>Migrate frontend build from Laravel Mix 4 to Mix 6 with webpack 5</li>
-<li>Move kiosk page background from App.css into kiosk layout; topbar gets a background</li>
-<li>Stream sales CSV exports instead of building them in memory</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 27, 2026</h3><a id="user-content-october-27-2026" class="anchor" aria-label="Permalink: October 27, 2026" href="#october-27-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add section and branch filters to weight distribution report</li>
-<li>Fix mobile sidebar layout and remove old dashboard view</li>
-<li>Replace Bootstrap admin navbar with custom top bar and sidebar layout</li>
-<li>Flag unflagged high-value packages at custody scan</li>
-<li>Remove debug Log calls and dead code, delete IPG and PowerTranz.bak helpers</li>
-<li>Remove custom password broker min-length override</li>
-<li>Remove debug logging from notification jobs and helper</li>
-<li>Fix IPG helper namespace and remove package-lock.json</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 26, 2026</h3><a id="user-content-october-26-2026" class="anchor" aria-label="Permalink: October 26, 2026" href="#october-26-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Restyle package create form flags as colored toggle tiles</li>
-<li>Add Tailwind utilities, theme CSS, and shell/UI JS bundles</li>
-<li>Receive packages for accounts whose login was deleted</li>
-<li>Add Tailwind CSS 3.4 build setup and lockfile updates</li>
-<li>Use absolute asset paths in site layouts and drop dead source map refs</li>
-<li>Add onOneServer to scheduled tasks and make cache store configurable</li>
-<li>Add receiving page, sidebar link, and receiver relation</li>
-<li>Add background AJAX package save with inline label PDF reply</li>
-<li>Fix package label and invoice previews blocked by X-Frame-Options</li>
-<li>Remove broken black-dashboard.min.js script tag from base layout</li>
-<li>Consolidate duplicate route names into match() and drop redundant named routes</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 25, 2026</h3><a id="user-content-october-25-2026" class="anchor" aria-label="Permalink: October 25, 2026" href="#october-25-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add maintenance banner for customer pages via config flag</li>
-<li>Email an alert when a queued job fails</li>
-<li>Queue jobs and mailables only after the surrounding transaction commits</li>
-<li>Remove the nightly points report</li>
-<li>Read settings through config instead of env() outside config files</li>
-<li>Read the points report's queue backlog through the queue connection</li>
-<li>Move PHPUnit doc-comment metadata to attributes</li>
-<li>Upgrade to Laravel 12</li>
-<li>Upgrade to Laravel 11</li>
-<li>Upgrade to Laravel 10</li>
-<li>Add legacy 5.7 remember-me cookie acceptance until 2026-12-31</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 23, 2026</h3><a id="user-content-october-23-2026" class="anchor" aria-label="Permalink: October 23, 2026" href="#october-23-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Keep payment-linked deliveries as cancelled instead of deleting them on checkin</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 24, 2026</h3><a id="user-content-october-24-2026" class="anchor" aria-label="Permalink: October 24, 2026" href="#october-24-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Switch PDF templates to public_path and logo-full-color-pdf.png</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 23, 2026</h3><a id="user-content-october-23-2026-1" class="anchor" aria-label="Permalink: October 23, 2026" href="#october-23-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Remove unused AWS endpoint config and add Laravel Cloud disk note</li>
-<li>Move incident, invoice, and product images to object storage</li>
-<li>Pin the MySQL session time zone to Jamaica</li>
-<li>Add sessions and cache tables for the database drivers</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 22, 2026</h3><a id="user-content-october-22-2026" class="anchor" aria-label="Permalink: October 22, 2026" href="#october-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add npm build script with the OpenSSL legacy flag</li>
-<li>Store sea freight volume from feed dimensions, show dimensions on view</li>
-<li>Upgrade to Laravel 9</li>
-<li>Drop unused pusher/pusher-php-server</li>
-<li>Run on PHP 8 (keeping PHP 7.4 working)</li>
-<li>Upgrade to Laravel 8</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 21, 2026</h3><a id="user-content-october-21-2026" class="anchor" aria-label="Permalink: October 21, 2026" href="#october-21-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Upgrade to Laravel 7</li>
-<li>Upgrade to Laravel 6</li>
-<li>Upgrade to Laravel 5.8</li>
-<li>Restyle package create form flags as colored toggle tiles</li>
-<li>Call mailSeaFreightPayload before validation in package controller</li>
-<li>Call mailSeaFreightPayload before validation in package controller</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 20, 2026</h3><a id="user-content-october-20-2026" class="anchor" aria-label="Permalink: October 20, 2026" href="#october-20-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Show activity timestamps as date with relative time</li>
-<li>Add high-value flag to packages: super-admin toggle on package view</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 17, 2026</h3><a id="user-content-october-17-2026" class="anchor" aria-label="Permalink: October 17, 2026" href="#october-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Enforce ownership on delivery, package, and checkout routes</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 15, 2026</h3><a id="user-content-october-15-2026" class="anchor" aria-label="Permalink: October 15, 2026" href="#october-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>feat: show customs C number on package view</li>
-<li>Record package custody scans from the RS25 Custody tab</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 13, 2026</h3><a id="user-content-october-13-2026" class="anchor" aria-label="Permalink: October 13, 2026" href="#october-13-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add dangerous goods export (CSV/XLSX/PDF) and date-range filter</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 11, 2026</h3><a id="user-content-october-11-2026" class="anchor" aria-label="Permalink: October 11, 2026" href="#october-11-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add a delivery-only flag to branches</li>
-<li>Rename "Branch Reports" to "Branch Tools" in admin views and sidebar</li>
-<li>Add active-state pill styling to admin sidebar links</li>
-<li>Move Customers and Delivery into own sidebar sections, add Driver</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 10, 2026</h3><a id="user-content-october-10-2026" class="anchor" aria-label="Permalink: October 10, 2026" href="#october-10-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add branches:verify and make the branch normalisation self-reverting</li>
-<li>Center-align pay tile amount inputs</li>
-<li>Redesign checkout payment buttons as colored tiles with amount inputs</li>
-<li>Store branch codes everywhere, resolved through the branches table</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 9, 2026</h3><a id="user-content-october-9-2026" class="anchor" aria-label="Permalink: October 9, 2026" href="#october-9-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Rework sidebar sections and remove the Analytics page</li>
-<li>Group admin sidebar links into sections by task</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 8, 2026</h3><a id="user-content-october-8-2026" class="anchor" aria-label="Permalink: October 8, 2026" href="#october-8-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Show activity timestamps as date with relative time</li>
-<li>Make admin tables scroll sideways on mobile</li>
-<li>Add active-state pill styling to admin sidebar links</li>
-<li>Swap flame icon for battery on Dangerous Goods sidebar link</li>
-<li>Kiosk: require confirmation before switching branch</li>
-<li>Kiosk: require confirmation before switching branch</li>
-<li>Require kiosk branch selection on launch instead of defaulting to VILLAGE</li>
-<li>Add Inactive Accounts branch report with CSV/Excel/PDF export</li>
-<li>Add inactive accounts report with CSV/Excel/PDF export</li>
-<li>Add active-state pill styling to admin sidebar links</li>
-<li>Add Lucide icon support to admin sidebar via @icon directive</li>
-<li>Add card payment reconciliation: manual settle/close from transaction page</li>
-<li>Add branch reports page with checkin status labels</li>
-<li>Add online transactions CSV/Excel export with shared filters</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 7, 2026</h3><a id="user-content-october-7-2026" class="anchor" aria-label="Permalink: October 7, 2026" href="#october-7-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Replace unlimited memory limit with 2048M in report controllers</li>
-<li>Add GCT to handling fee in calculator and rates</li>
-<li>Extract partner summary into shared partial, add to transactions</li>
-<li>Move online transactions viewer from tools to reports</li>
-<li>Add customer sign-up drill-down from dashboard sparkline bars</li>
-<li>Add created index for points statements</li>
-<li>Skip points statements for dormant customers (6+ months inactive)</li>
-<li>Support sea freight pricing by volume with dedicated cu_ft column</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 6, 2026</h3><a id="user-content-october-6-2026" class="anchor" aria-label="Permalink: October 6, 2026" href="#october-6-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Compare only elapsed days when the sales report range runs past today</li>
-<li>Tone down the previous-year badge on the sales report</li>
-<li>Add change vs previous year on the sales report</li>
-<li>Compare whole months against whole months on the sales report</li>
-<li>Label the previous period on the sales report</li>
-<li>Show change vs previous period on sales report</li>
-<li>Track refund creator and display in admin</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 4, 2026</h3><a id="user-content-october-4-2026" class="anchor" aria-label="Permalink: October 4, 2026" href="#october-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Style navy account buttons with solid ink</li>
-<li>Restyle delivery list with package row component</li>
-<li>Restyle receipt list with package row component</li>
-<li>Extract cardmark styles to separate stylesheet</li>
-<li>Display card brand marks in payment receipts</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 3, 2026</h3><a id="user-content-october-3-2026" class="anchor" aria-label="Permalink: October 3, 2026" href="#october-3-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Restructure form checkboxes for accessibility and theme support</li>
-<li>Add compact issued display for coupon list, full details on show page</li>
-<li>Add coupon issuance tracking with admin attribution and filtering</li>
-<li>Allow multiple coupon redemptions per customer</li>
-<li>Add coupon creation form and code export</li>
-<li>Add coupon claim links and shareable cards</li>
-<li>Add coupon show page with redemption history and batch stats</li>
-<li>Remove account delivery view</li>
-<li>Add express pickups to unified check-in</li>
-<li>Add express pickups to unified check-in</li>
-<li>Add deliveries and receipts tabs with independent pagination</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">October 1, 2026</h3><a id="user-content-october-1-2026" class="anchor" aria-label="Permalink: October 1, 2026" href="#october-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Bump CSS versions for the PowerTranz styles</li>
-<li>Fix online card totals on the date-only report filter</li>
-<li>Fix navbar layout and remove rocket label text</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 23, 2026</h3><a id="user-content-september-23-2026" class="anchor" aria-label="Permalink: September 23, 2026" href="#september-23-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Meet PowerTranz website and receipt requirements</li>
-<li>Check delivery ownership on cancel, reschedule and delete</li>
-<li>Remove users.branch_code, route all branch reads through accounts</li>
-<li>Adapt production's branch reads to the dropped name columns</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 22, 2026</h3><a id="user-content-september-22-2026" class="anchor" aria-label="Permalink: September 22, 2026" href="#september-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Replace branch_name with branch() relation</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 20, 2026</h3><a id="user-content-september-20-2026" class="anchor" aria-label="Permalink: September 20, 2026" href="#september-20-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add receipt display and payment method branding</li>
-<li>Remove user name fallback from card form field</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 19, 2026</h3><a id="user-content-september-19-2026" class="anchor" aria-label="Permalink: September 19, 2026" href="#september-19-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Redesign receipt view with grid-based card layout and improved styling</li>
-<li>Display gateway transaction details on receipt</li>
-<li>Display payment gateway logos on receipt</li>
-<li>Add payment instrument styling and redesign receipt</li>
-<li>Implement customer receipt listing and PDF download</li>
-<li>Implement PayPal reconciliation and server-side capture</li>
-<li>Implement card payment reconciliation sweep</li>
-<li>Implement Lynk reconciliation and extract settlement logic</li>
-<li>Remove payTest smoke test, add card payment instrument tests</li>
-<li>Drop the folded callback_note column</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 18, 2026</h3><a id="user-content-september-18-2026" class="anchor" aria-label="Permalink: September 18, 2026" href="#september-18-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Make transactions record the account that paid and the instrument used</li>
-<li>Generalise the transactions ledger across gateways</li>
-<li>Adopt dashboard styling for delivery and card forms</li>
-<li>Refactor PowerTranz and track online card payments</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">September 2026</h2><a id="user-content-september-2026" class="anchor" aria-label="Permalink: September 2026" href="#september-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">September 30, 2026</h3><a id="user-content-september-30-2026" class="anchor" aria-label="Permalink: September 30, 2026" href="#september-30-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Schedule daily points report at midnight</li>
-<li>Remove old points schedule report in favor of V2</li>
-<li>Schedule month-end points expiry and consolidate logic to PointsLedger</li>
-<li>Speed up push broadcasts with concurrent delivery</li>
-<li>Add admin push notification tool</li>
-<li>Disable till payment options when the sale is already paid online</li>
-<li>Let prepaid packages check out at the till without a tender</li>
-<li>Add GiftMe payment option to the cashier till</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 29, 2026</h3><a id="user-content-september-29-2026" class="anchor" aria-label="Permalink: September 29, 2026" href="#september-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add other reason type with custom description</li>
-<li>Include only collected packages in checkout receipts</li>
-<li>Remove clear all checkins feature</li>
-<li>Replace journey scroll animation with live tracking console</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 23, 2026</h3><a id="user-content-september-23-2026-1" class="anchor" aria-label="Permalink: September 23, 2026" href="#september-23-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Resync user branch from primary account</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 22, 2026</h3><a id="user-content-september-22-2026-1" class="anchor" aria-label="Permalink: September 22, 2026" href="#september-22-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Use AccountBranch helper for account-aware branch reporting</li>
-<li>Detect blocked cookies in curbside check-in</li>
-<li>Implement curbside check-in with vehicle details</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 21, 2026</h3><a id="user-content-september-21-2026" class="anchor" aria-label="Permalink: September 21, 2026" href="#september-21-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Resync account branch from users</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 20, 2026</h3><a id="user-content-september-20-2026-1" class="anchor" aria-label="Permalink: September 20, 2026" href="#september-20-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add quick actions for bulk package delivery and payment</li>
-<li>Redesign package list with accessible status chips and eager loading</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 19, 2026</h3><a id="user-content-september-19-2026-1" class="anchor" aria-label="Permalink: September 19, 2026" href="#september-19-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Replace whereDate with DayRange for index-friendly filtering</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 18, 2026</h3><a id="user-content-september-18-2026-1" class="anchor" aria-label="Permalink: September 18, 2026" href="#september-18-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add package ID to warehouse board display</li>
-<li>Show disabled package action reason on hover</li>
-<li>Release packages from deleted check-ins and stabilize timer display</li>
-<li>Allow deleting check-ins from cashier queue without sale</li>
-<li>Track check-in completion with status and cashier ID</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 17, 2026</h3><a id="user-content-september-17-2026" class="anchor" aria-label="Permalink: September 17, 2026" href="#september-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Show package ID in checkin view and enable asset cache busting</li>
-<li>Show deleted customer status in account and package views</li>
-<li>Refactor email templates to use base layout inheritance</li>
-<li>Drop redundant activity indexes and shrink columns</li>
-<li>Require refund amount and separate from payout currency</li>
-<li>Add filtering to package activity history</li>
-<li>Fix checkout payment linking to collected packages</li>
-<li>Expand payment branch aliases for report grouping</li>
-<li>Make the cashier list more concise on payment reports.</li>
-<li>Add RecoverLynkPayments console command</li>
-<li>Add last activity timestamp to admin dashboard</li>
-<li>Add yesterday preset to admin report date range</li>
-<li>Seed new account email from user</li>
-<li>Add the 16 Sep PayPal export used for the outage recovery</li>
-<li>Refuse PayPal rows without a transaction id in recovery</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 16, 2026</h3><a id="user-content-september-16-2026" class="anchor" aria-label="Permalink: September 16, 2026" href="#september-16-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Restore Payment::claim and add PayPal outage recovery</li>
-<li>Add last activity timestamp to admin dashboard</li>
-<li>Display delivery creation timestamp</li>
-<li>Display delivery creation timestamp</li>
-<li>Read points from user wallet instead of account</li>
-<li>Add air/sea freight filtering to unprocessed packages</li>
-<li>Set payment branch at creation; optimize backfill chunking</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 15, 2026</h3><a id="user-content-september-15-2026" class="anchor" aria-label="Permalink: September 15, 2026" href="#september-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Fix btn-default label readability on hover/focus/active</li>
-<li>Display branch code on package details</li>
-<li>Gate self-serve account creation behind feature flag</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 14, 2026</h3><a id="user-content-september-14-2026" class="anchor" aria-label="Permalink: September 14, 2026" href="#september-14-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Use account branch code for account page check-ins</li>
-<li>Make customer lookup return accounts instead of users</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 10, 2026</h3><a id="user-content-september-10-2026" class="anchor" aria-label="Permalink: September 10, 2026" href="#september-10-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Remove unused inspire command and Inspiring import</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 9, 2026</h3><a id="user-content-september-9-2026" class="anchor" aria-label="Permalink: September 9, 2026" href="#september-9-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add the Phase 9 cutover runbook</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 8, 2026</h3><a id="user-content-september-8-2026" class="anchor" aria-label="Permalink: September 8, 2026" href="#september-8-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Move the payments user_id repair out of the migration into a command</li>
-<li>Add invoice authorization and account-scoped preferences</li>
-<li>Order the shipment exports by package id explicitly</li>
-<li>Sort the clearance list by mailbox name, not login name</li>
-<li>Add the [D6] drift guard so nobody has to remember to look</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 7, 2026</h3><a id="user-content-september-7-2026" class="anchor" aria-label="Permalink: September 7, 2026" href="#september-7-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Close the reporting group - five of six were never defects</li>
-<li>Consolidate the three account documents into one authority</li>
-<li>Add the two Phase 8 tests that guard the cutover</li>
-<li>Reconcile the migration plan against the code</li>
-<li>Close the last checklist item - receipts landed in 1cd0a1d</li>
-<li>Resolve an email lookup by rule instead of by row order</li>
-<li>Attribute every payment to the mailbox that was settled</li>
-<li>Scope checkout receipts to recipient's own packages</li>
-<li>Fix checkout payment linking to collected packages</li>
-<li>Key checkins and settlement by account instead of login</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 6, 2026</h3><a id="user-content-september-6-2026" class="anchor" aria-label="Permalink: September 6, 2026" href="#september-6-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Defer notification emails until settlement commits, handle errors</li>
-<li>Guard against deleted referrers in referral processing</li>
-<li>Make points wallets per-login, shared across mailboxes</li>
-<li>Delete migration adding account_id to points tables</li>
-<li>Restore direct user relations and sync user_id with accounts</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 5, 2026</h3><a id="user-content-september-5-2026" class="anchor" aria-label="Permalink: September 5, 2026" href="#september-5-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Make package reassignment and refunds account-aware</li>
-<li>Make exports and admin views account-aware</li>
-<li>Route FCM notifications to mailbox owner and personalize greetings</li>
-<li>Make manifests and invoices account-aware with user fallback</li>
-<li>Replace login-scoped auth checks with account-aware policies</li>
-<li>Attribute packages and child records to accounts, not logins</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 4, 2026</h3><a id="user-content-september-4-2026" class="anchor" aria-label="Permalink: September 4, 2026" href="#september-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Fix checkout payment linking to collected packages</li>
-<li>Add active state styling to main navigation links</li>
-<li>Redesign welcome email template for improved layout and clarity</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 3, 2026</h3><a id="user-content-september-3-2026" class="anchor" aria-label="Permalink: September 3, 2026" href="#september-3-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add daily drill-down and caching to points schedule report</li>
-<li>Add Points Schedule V2 report with rolling 12-month expiration</li>
-<li>Fix status breakdown visibility in shipment view</li>
-<li>Add status 27 to clearing and fix breakdown display logic</li>
-<li>Add status breakdown grouping to shipment view</li>
-<li>Add receivedInMiamiPackages tracking to shipment view</li>
-<li>Standardize page titles across views</li>
-<li>Standardize page titles across views</li>
-<li>Refactor FAQs with search, category filters, and accordion design</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 2, 2026</h3><a id="user-content-september-2-2026" class="anchor" aria-label="Permalink: September 2, 2026" href="#september-2-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add active state styling to main navigation links</li>
-<li>Add active state styling to main navigation links</li>
-<li>Add admin tools section with navigation and routes</li>
-<li>Add contact form validation and redesign contact page</li>
-<li>Redesign footer with organized grid layout and styling</li>
-<li>Improve careers empty state design and messaging</li>
-<li>Simplify careers page forms and styling</li>
-<li>Separate processing fees from handling fees in sea freight reporting</li>
-<li>Reorganize sales report layout with freight breakdowns</li>
-<li>Add date range validation to sales reports</li>
-<li>Extract date range inputs to partial</li>
-<li>Add Other category to sales split for reconciliation</li>
-<li>Add tooltips to sales categories and tighten tiles layout</li>
-<li>Reorganize sales report layout with freight breakdowns</li>
-<li>Add Other category to sales split for reconciliation</li>
-<li>Add delayed packages count to admin shipment index</li>
-<li>Optimize sales report with async freight queries and packages export</li>
-<li>Simplify delayed package notification message</li>
-<li>Move Turnstile widgets below submit buttons with styling</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">September 1, 2026</h3><a id="user-content-september-1-2026" class="anchor" aria-label="Permalink: September 1, 2026" href="#september-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add Turnstile CAPTCHA to public forms</li>
-<li>Set registration channel on user creation</li>
-<li>Add careers feature with job postings and applications</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 31, 2026</h3><a id="user-content-august-31-2026" class="anchor" aria-label="Permalink: August 31, 2026" href="#august-31-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add registration rate limiting and honeypot component</li>
-</ul>
-<div class="markdown-heading"><h2 class="heading-element">August 2026</h2><a id="user-content-august-2026" class="anchor" aria-label="Permalink: August 2026" href="#august-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<div class="markdown-heading"><h3 class="heading-element">August 31, 2026</h3><a id="user-content-august-31-2026-1" class="anchor" aria-label="Permalink: August 31, 2026" href="#august-31-2026-1"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Backfill incident report account IDs</li>
-<li>Resolve refunds to accounts with legacy user fallback</li>
-<li>Scope incidents and refunds to accounts</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 30, 2026</h3><a id="user-content-august-30-2026" class="anchor" aria-label="Permalink: August 30, 2026" href="#august-30-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Backfill account email from users table</li>
-<li>Add phone field to Account; resolve metadata through accounts</li>
-<li>Extract account descriptors into DescribesAccount trait</li>
-<li>Scope deliveries to accounts with user fallback for legacy rows</li>
-<li>Display tracking numbers in delivery confirmation email</li>
-<li>Scope pickup packages to active account and display tracking numbers</li>
-<li>Require active account when creating deliveries</li>
-<li>Scope delivery packages to active account and display tracking numbers</li>
-<li>Refactor dormancy check across customer accounts</li>
-<li>Persist cashier branch filter across page reloads</li>
-<li>Position account_id columns after related foreign keys</li>
-<li>Override theme button hover styling</li>
-<li>Add package reweigh feature with automatic charge recalculation</li>
-<li>Refactor package detail view with custom styling</li>
-<li>Add package detail view to checkout</li>
-<li>Add weight column to checkout verification</li>
-<li>Switch warehouse feed to resolve accounts instead of users</li>
-<li>Report sea freight statistics by account instead of user</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 29, 2026</h3><a id="user-content-august-29-2026" class="anchor" aria-label="Permalink: August 29, 2026" href="#august-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Remove new accounts metric from branch report</li>
-<li>Report branch statistics by account instead of user</li>
-<li>Report aged uncollected packages per account instead of user</li>
-<li>Replace inline setState with selectPackage method</li>
-<li>Update checkout receipt email subject and filename</li>
-<li>Send checkout receipts to account mailboxes</li>
-<li>Use asset helper for checkout receipt logo URL</li>
-<li>Restructure checkout receipt to use table layout for email clients</li>
-<li>Send checkout receipts to account mailboxes</li>
-<li>Fix the formating of the pickup section of the accounts page</li>
-<li>Add check-in from account view with warehouse/cashier routing</li>
-<li>Redirect checkin index to warehouse and move list to separate route</li>
-<li>Add cashier feed polling and redesigned checkout UI</li>
-<li>Add chime notifications and empty state components</li>
-<li>Remove Pusher real-time broadcast functionality</li>
-<li>Mute cancel button on accepted check-in cards</li>
-<li>Fix formatting and layout of the warehouse board cards.</li>
-<li>Guard check-in state on status instead of worker_id</li>
-<li>Add check-in status and warehouse board actions</li>
-<li>Highlight shelf location and display weight on warehouse board</li>
-<li>Refactor check-in feed to use polling API with branch filtering</li>
-<li>Scope kiosk checkin to accounts with mailbox support</li>
-<li>Seed account email and phone from login address</li>
-<li>Scope partner admin from users to accounts</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 28, 2026</h3><a id="user-content-august-28-2026" class="anchor" aria-label="Permalink: August 28, 2026" href="#august-28-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Remove login fallback from package mailbox column</li>
-<li>Paginate packages and permission-gate revenue totals</li>
-<li>Display account name and mailbox in package exports</li>
-<li>Display account name and mailbox in admin package list</li>
-<li>Move account actions to top and balance customer info cards</li>
-<li>Refactor admin customer section to separate users and accounts</li>
-<li>Route notifications to account email instead of user email</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 27, 2026</h3><a id="user-content-august-27-2026" class="anchor" aria-label="Permalink: August 27, 2026" href="#august-27-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add account-level notification email and preferences</li>
-<li>Move mailbox name above number and apply flat variant</li>
-<li>Inline card actions and make package filters optional</li>
-<li>Move points balance from header chip to content card</li>
-<li>Move mailbox card from nav to page headers</li>
-<li>Rename settings routes to accounts and add navy theme</li>
-<li>Allow users to open additional mailbox accounts</li>
-<li>Add account switcher to mailbox card</li>
-<li>Add login and password editors to settings page</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 26, 2026</h3><a id="user-content-august-26-2026" class="anchor" aria-label="Permalink: August 26, 2026" href="#august-26-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Consolidate editor exit logic into EditScreen utility</li>
-<li>Move account editing from modal to dedicated screen</li>
-<li>Add account name field to refunds</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 25, 2026</h3><a id="user-content-august-25-2026" class="anchor" aria-label="Permalink: August 25, 2026" href="#august-25-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add sea freight report to admin dashboard</li>
-<li>Clean up driver tool nav bar</li>
-<li>Center brand logo in driver admin topbar</li>
-<li>Extract delivery closure operations into trait and add driver controller</li>
-<li>Extract account options and add account selection to settings</li>
-<li>Scope customer data to active account instead of login</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 22, 2026</h3><a id="user-content-august-22-2026" class="anchor" aria-label="Permalink: August 22, 2026" href="#august-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Fix package branch_code to use user record instead of account</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 20, 2026</h3><a id="user-content-august-20-2026" class="anchor" aria-label="Permalink: August 20, 2026" href="#august-20-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add usage donut chart and 7-day signup history to admin dashboard</li>
-<li>Split mobile platform tracking to distinguish iOS and Android</li>
-<li>Prevent duplicate refunds by tracking number</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 19, 2026</h3><a id="user-content-august-19-2026" class="anchor" aria-label="Permalink: August 19, 2026" href="#august-19-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Adjust admin dashboard grid layout</li>
-<li>Add platform icons to admin dashboard usage display</li>
-<li>Track platform usage and display on admin dashboard</li>
-<li>Require tracking number when no package selected</li>
-<li>Support refunds for packages that never arrived at warehouse</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 18, 2026</h3><a id="user-content-august-18-2026" class="anchor" aria-label="Permalink: August 18, 2026" href="#august-18-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Refactor branch selection to modal dialog</li>
-<li>Make kiosk interface responsive with fluid sizing and media queries</li>
-<li>Add RCJ data conversion plan</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 17, 2026</h3><a id="user-content-august-17-2026" class="anchor" aria-label="Permalink: August 17, 2026" href="#august-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Phase 3: active-account context, middleware, switcher and policies [D5]</li>
-<li>Add TRANSIT_HQ status to unprocessed packages logic</li>
-<li>Use user branch code instead of account branch code</li>
-<li>P1.12: add accounts:verify instead of the specified backfill migration</li>
-<li>P1.3: add account_id to payments [D4]</li>
-<li>P1.4a steps 1-2: stage the Lynk column rename on transactions</li>
-<li>P1.10: add account_id indexes mirroring the user_id ones</li>
-<li>P1.6/P1.7: add account_id to refunds and authorized_people</li>
-<li>P1.1/P1.2/P1.5: add account_id to deliveries, pickups and orders</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 16, 2026</h3><a id="user-content-august-16-2026" class="anchor" aria-label="Permalink: August 16, 2026" href="#august-16-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>P1.8: move saved addresses to accounts [D2]</li>
-<li>P1.9: move loyalty points to accounts [D1]</li>
-<li>P1.11: add is_primary to accounts with a one-primary-per-user constraint</li>
-<li>Fix IDOR in address and authorized-person delete endpoints</li>
-<li>Add account migration plan</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 15, 2026</h3><a id="user-content-august-15-2026" class="anchor" aria-label="Permalink: August 15, 2026" href="#august-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Update storage begins calculation to 31 days in package reminder email</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 14, 2026</h3><a id="user-content-august-14-2026" class="anchor" aria-label="Permalink: August 14, 2026" href="#august-14-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Fix malformed a tag</li>
-<li>Update storage begins calculation to 31 days in package reminder email</li>
-<li>Change default pickup branch to East Kings House Road</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 13, 2026</h3><a id="user-content-august-13-2026" class="anchor" aria-label="Permalink: August 13, 2026" href="#august-13-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Redesign admin package index with eager loading</li>
-<li>Redesign customer index page with improved layout and styling</li>
-<li>Format the JMD and USD number figures. on accounts</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 12, 2026</h3><a id="user-content-august-12-2026" class="anchor" aria-label="Permalink: August 12, 2026" href="#august-12-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Update accounts when customer branch changes</li>
-<li>Add Dumbarton branch to customer branch selector</li>
-<li>Refine admin package view styling and layout</li>
-<li>Reorganize filters to grid layout with status dropdown</li>
-<li>Add status filtering and export to unprocessed packages</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 11, 2026</h3><a id="user-content-august-11-2026" class="anchor" aria-label="Permalink: August 11, 2026" href="#august-11-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add dangerous goods package notifications</li>
-<li>Lock refund payout currency to JMD, set by admin at creation</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 10, 2026</h3><a id="user-content-august-10-2026" class="anchor" aria-label="Permalink: August 10, 2026" href="#august-10-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add export functionality for aged-uncollected report</li>
-<li>Add dangerous goods bulk shipment assignment</li>
-<li>Add east_kings to checkin filter choices</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 5, 2026</h3><a id="user-content-august-5-2026" class="anchor" aria-label="Permalink: August 5, 2026" href="#august-5-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Modernize admin customer and package views with improved styling</li>
-<li>Remove customs charges functionality</li>
-<li>Add east_kings to checkin filter choices</li>
-<li>Add east_kings to checkin filter choices</li>
-<li>Remove Space Grotesk from font stacks</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 4, 2026</h3><a id="user-content-august-4-2026" class="anchor" aria-label="Permalink: August 4, 2026" href="#august-4-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Hide Request Refund option in package view</li>
-<li>Hide value row on the customer package details</li>
-<li>Hide Request Refund option in package view</li>
-<li>Hide Request Refund option in package view</li>
-<li>Centralize package status filters and add UI navigation</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 3, 2026</h3><a id="user-content-august-3-2026" class="anchor" aria-label="Permalink: August 3, 2026" href="#august-3-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Update navbar logo to LogoInlineColorWhite</li>
-<li>Add top padding to customer page content</li>
-<li>Refactor navbar navigation with active state detection</li>
-<li>Redesign shipping cost calculator page</li>
-<li>Add package activities to package detail screen for customers.</li>
-<li>Redesign activity timeline with day bands</li>
-<li>Added branch code card to the dashboard view</li>
-<li>Fix MailboxResolver handling of mailbox ID 0</li>
-<li>Refresh customer facing view designs</li>
-<li>Add package status validation and normalize to uppercase</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 2, 2026</h3><a id="user-content-august-2-2026" class="anchor" aria-label="Permalink: August 2, 2026" href="#august-2-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Update mobile auth logo to colored version</li>
-<li>Add landing page typography with Space Grotesk and Space Mono</li>
-<li>Redesign auth pages with new layout and styling</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">August 1, 2026</h3><a id="user-content-august-1-2026" class="anchor" aria-label="Permalink: August 1, 2026" href="#august-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Hide Request Refund option in package view</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 31, 2026</h3><a id="user-content-july-31-2026" class="anchor" aria-label="Permalink: July 31, 2026" href="#july-31-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add permission-based admin dashboard with stats tiles</li>
-<li>Remove permission creation from admin UI</li>
-<li>Add role detail page and redesign permissions UI</li>
-<li>Filter payment report queries by branch aliases</li>
-<li>Hide pick-up menu item from admin sidebar</li>
-<li>Move admin logo to fixed sidebar on desktop</li>
-<li>Filter payment report queries by branch aliases</li>
-<li>Handle branch name aliases in payment reports</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 30, 2026</h3><a id="user-content-july-30-2026" class="anchor" aria-label="Permalink: July 30, 2026" href="#july-30-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Center shipment title and simplify navigation styling</li>
-<li>Add navigation between shipments in admin view</li>
-<li>Add branch to payment records</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 29, 2026</h3><a id="user-content-july-29-2026" class="anchor" aria-label="Permalink: July 29, 2026" href="#july-29-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Handle Lynk payment type in checkout payment reset</li>
-<li>Prevent double-charging prepaid deliveries and fix Lynk payment handling</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 28, 2026</h3><a id="user-content-july-28-2026" class="anchor" aria-label="Permalink: July 28, 2026" href="#july-28-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Prevent double submission of checkout forms</li>
-<li>Make checkouts idempotent with database transactions</li>
-<li>Extract shared staff discount query method</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 24, 2026</h3><a id="user-content-july-24-2026" class="anchor" aria-label="Permalink: July 24, 2026" href="#july-24-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add 6 month and 1 year filters to aged uncollected report</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 23, 2026</h3><a id="user-content-july-23-2026" class="anchor" aria-label="Permalink: July 23, 2026" href="#july-23-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Update East Kings House branch opening hours</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 22, 2026</h3><a id="user-content-july-22-2026" class="anchor" aria-label="Permalink: July 22, 2026" href="#july-22-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Consolidate inventory methods into aged uncollected report</li>
-<li>Disable high-value packages menu and routes</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 21, 2026</h3><a id="user-content-july-21-2026" class="anchor" aria-label="Permalink: July 21, 2026" href="#july-21-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add Branch Code column to custodial log PDF</li>
-<li>Add Branch Code column to custodial log PDF</li>
-<li>Add Branch Code column to custodial log PDF</li>
-<li>Remove high value items card from shipment view</li>
-<li>Add custodial log PDF download for high-value shipments</li>
-<li>Remove table horizontal scroll on medium screens and larger</li>
-<li>Remove table horizontal scroll on medium screens and larger</li>
-<li>Hide journey rail on small screens</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 17, 2026</h3><a id="user-content-july-17-2026" class="anchor" aria-label="Permalink: July 17, 2026" href="#july-17-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add vehicle motion, smoke effects, and ambient animations to flat-hero</li>
-<li>Refactor journey animation from scroll-driven to timer-based</li>
-<li>Polish deliveries page layout and styling</li>
-<li>Implement custom PDF export with Blade template</li>
-<li>Add delivery export with CSV, XLSX and PDF formats</li>
-<li>Add status, date filters and export to high-value packages</li>
-<li>Add null coalescing to payment ID variables</li>
-<li>Disable scroll-driven animation, use timed loop for all devices</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 16, 2026</h3><a id="user-content-july-16-2026" class="anchor" aria-label="Permalink: July 16, 2026" href="#july-16-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add close button to error alert in QR config</li>
-<li>Add payment ID search to admin report</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 15, 2026</h3><a id="user-content-july-15-2026" class="anchor" aria-label="Permalink: July 15, 2026" href="#july-15-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add refund request and management system</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 14, 2026</h3><a id="user-content-july-14-2026" class="anchor" aria-label="Permalink: July 14, 2026" href="#july-14-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Style customs number as badge in customs recon report</li>
-<li>Style customs number as badge in customs recon report</li>
-<li>Add customs duty fee application with splitting</li>
-<li>Add id to ready packages table</li>
-<li>Improve location delete button styling and confirmation</li>
-<li>Add delivery location creation and deletion</li>
-<li>Style customs number as badge in customs recon report</li>
-<li>Add Customs Recon report with CSV/XLSX export</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">July 1, 2026</h3><a id="user-content-july-1-2026" class="anchor" aria-label="Permalink: July 1, 2026" href="#july-1-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Add status 28 to detained statuses</li>
-</ul>
-<div class="markdown-heading"><h3 class="heading-element">June 26, 2026</h3><a id="user-content-june-26-2026" class="anchor" aria-label="Permalink: June 26, 2026" href="#june-26-2026"><span aria-hidden="true" class="octicon octicon-link"></span></a></div>
-<ul>
-<li>Revert "Conditionally load Tailwind CDN to prevent browser freezes"</li>
-<li>Conditionally load Tailwind CDN to prevent browser freezes</li>
-</ul>
+<table>
+<thead><tr><th class="date">Date</th><th>Change</th><th class="diff">Lines</th></tr></thead>
+<tbody>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-11-12">Thursday, November 12, 2026</time></th><td class="msg" data-date="Thursday, November 12, 2026">Replace bash changelog script with python version</td><td class="diff"><span class="add">+190</span> <span class="del">&minus;61</span></td></tr>
+<tr><td class="msg" data-date="Thursday, November 12, 2026">Add banners to dashboard and email with Admin Branding</td><td class="diff"><span class="add">+876</span> <span class="del">&minus;10</span></td></tr>
+<tr><td class="msg" data-date="Thursday, November 12, 2026">Notify old and new addresses when account or sign-in email changes</td><td class="diff"><span class="add">+407</span> <span class="del">&minus;6</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-11-11">Wednesday, November 11, 2026</time></th><td class="msg" data-date="Wednesday, November 11, 2026">Fix staff report to query packages joined to receiving users</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 11, 2026">Add customer ranking report link to admin dashboard</td><td class="diff"><span class="add">+307</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-11-10">Tuesday, November 10, 2026</time></th><td class="msg" data-date="Tuesday, November 10, 2026">Replace quote request form with calculator sea-mode links</td><td class="diff"><span class="add">+20</span> <span class="del">&minus;155</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="4" class="date"><time datetime="2026-11-06">Friday, November 6, 2026</time></th><td class="msg" data-date="Friday, November 6, 2026">Add intake photo upload and label_data to the intake API</td><td class="diff"><span class="add">+313</span> <span class="del">&minus;7</span></td></tr>
+<tr><td class="msg" data-date="Friday, November 6, 2026">Reprint package labels from the creation page via in-place print</td><td class="diff"><span class="add">+25</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Friday, November 6, 2026">Replace recent-packages table with per-login list on creation page</td><td class="diff"><span class="add">+120</span> <span class="del">&minus;150</span></td></tr>
+<tr><td class="msg" data-date="Friday, November 6, 2026">Switch PDF logos and receipt brand images to PdfImage::src</td><td class="diff"><span class="add">+59</span> <span class="del">&minus;14</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="9" class="date"><time datetime="2026-11-04">Wednesday, November 4, 2026</time></th><td class="msg" data-date="Wednesday, November 4, 2026">Publish the changelog to a public page</td><td class="diff"><span class="add">+89</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Test the automatic changelog</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Publish a GitHub Release with the new commits on each push to main</td><td class="diff"><span class="add">+61</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Intake key: distinct error codes the app can show</td><td class="diff"><span class="add">+69</span> <span class="del">&minus;13</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Intake API: shared device key instead of a staff login, for now</td><td class="diff"><span class="add">+78</span> <span class="del">&minus;46</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Add sea freight dimension fields (length, width, height) and validate edits up front</td><td class="diff"><span class="add">+80</span> <span class="del">&minus;10</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Add VoidOctober2026PointsAbuse console command</td><td class="diff"><span class="add">+259</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Fix negative points redemption and make redemption atomic</td><td class="diff"><span class="add">+355</span> <span class="del">&minus;63</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, November 4, 2026">Add Intake iPad setup and label reprint endpoints to API v1</td><td class="diff"><span class="add">+340</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-11-02">Monday, November 2, 2026</time></th><td class="msg" data-date="Monday, November 2, 2026">Remove raw DB::raw wrapper from staff discount report query</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-10-31">Saturday, October 31, 2026</time></th><td class="msg" data-date="Saturday, October 31, 2026">Drop SVG from incident image upload allowlist</td><td class="diff"><span class="add">+157</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-10-29">Thursday, October 29, 2026</time></th><td class="msg" data-date="Thursday, October 29, 2026">Add employee stats tiles and role breakdown to user admin</td><td class="diff"><span class="add">+74</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 29, 2026">Remove the accounts cutover runbook, migration notes, and drift CSVs</td><td class="diff"><span class="add">+16</span> <span class="del">&minus;686</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-10-28">Wednesday, October 28, 2026</time></th><td class="msg" data-date="Wednesday, October 28, 2026">Remove the unused layouts/app view and its Bootstrap Sass build</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;161</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 28, 2026">Split React screens out of app.js and load one jQuery in admin layouts</td><td class="diff"><span class="add">+39</span> <span class="del">&minus;26</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 28, 2026">Migrate frontend build from Laravel Mix 4 to Mix 6 with webpack 5</td><td class="diff"><span class="add">+3,052</span> <span class="del">&minus;4,986</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 28, 2026">Move kiosk page background from App.css into kiosk layout; topbar gets a background</td><td class="diff"><span class="add">+13</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 28, 2026">Stream sales CSV exports instead of building them in memory</td><td class="diff"><span class="add">+144</span> <span class="del">&minus;22</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="8" class="date"><time datetime="2026-10-27">Tuesday, October 27, 2026</time></th><td class="msg" data-date="Tuesday, October 27, 2026">Add section and branch filters to weight distribution report</td><td class="diff"><span class="add">+106</span> <span class="del">&minus;22</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 27, 2026">Fix mobile sidebar layout and remove old dashboard view</td><td class="diff"><span class="add">+7</span> <span class="del">&minus;666</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 27, 2026">Replace Bootstrap admin navbar with custom top bar and sidebar layout</td><td class="diff"><span class="add">+42</span> <span class="del">&minus;87</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 27, 2026">Flag unflagged high-value packages at custody scan</td><td class="diff"><span class="add">+42</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 27, 2026">Remove debug Log calls and dead code, delete IPG and PowerTranz.bak helpers</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;484</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 27, 2026">Remove custom password broker min-length override</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;18</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 27, 2026">Remove debug logging from notification jobs and helper</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 27, 2026">Fix IPG helper namespace and remove package-lock.json</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;27,622</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="11" class="date"><time datetime="2026-10-26">Monday, October 26, 2026</time></th><td class="msg" data-date="Monday, October 26, 2026">Restyle package create form flags as colored toggle tiles</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Add Tailwind utilities, theme CSS, and shell/UI JS bundles</td><td class="diff"><span class="add">+15,209</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Receive packages for accounts whose login was deleted</td><td class="diff"><span class="add">+86</span> <span class="del">&minus;9</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Add Tailwind CSS 3.4 build setup and lockfile updates</td><td class="diff"><span class="add">+9,419</span> <span class="del">&minus;7,724</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Use absolute asset paths in site layouts and drop dead source map refs</td><td class="diff"><span class="add">+101</span> <span class="del">&minus;105</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Add onOneServer to scheduled tasks and make cache store configurable</td><td class="diff"><span class="add">+25</span> <span class="del">&minus;10</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Add receiving page, sidebar link, and receiver relation</td><td class="diff"><span class="add">+1,839</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Add background AJAX package save with inline label PDF reply</td><td class="diff"><span class="add">+128</span> <span class="del">&minus;12</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Fix package label and invoice previews blocked by X-Frame-Options</td><td class="diff"><span class="add">+19</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Remove broken black-dashboard.min.js script tag from base layout</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Monday, October 26, 2026">Consolidate duplicate route names into match() and drop redundant named routes</td><td class="diff"><span class="add">+97</span> <span class="del">&minus;64</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="11" class="date"><time datetime="2026-10-25">Sunday, October 25, 2026</time></th><td class="msg" data-date="Sunday, October 25, 2026">Add maintenance banner for customer pages via config flag</td><td class="diff"><span class="add">+19</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Email an alert when a queued job fails</td><td class="diff"><span class="add">+194</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Queue jobs and mailables only after the surrounding transaction commits</td><td class="diff"><span class="add">+105</span> <span class="del">&minus;20</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Remove the nightly points report</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;613</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Read settings through config instead of env() outside config files</td><td class="diff"><span class="add">+120</span> <span class="del">&minus;69</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Read the points report&#x27;s queue backlog through the queue connection</td><td class="diff"><span class="add">+190</span> <span class="del">&minus;28</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Move PHPUnit doc-comment metadata to attributes</td><td class="diff"><span class="add">+606</span> <span class="del">&minus;568</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Upgrade to Laravel 12</td><td class="diff"><span class="add">+900</span> <span class="del">&minus;516</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Upgrade to Laravel 11</td><td class="diff"><span class="add">+1,010</span> <span class="del">&minus;850</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Upgrade to Laravel 10</td><td class="diff"><span class="add">+250</span> <span class="del">&minus;280</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 25, 2026">Add legacy 5.7 remember-me cookie acceptance until 2026-12-31</td><td class="diff"><span class="add">+229</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-10-24">Saturday, October 24, 2026</time></th><td class="msg" data-date="Saturday, October 24, 2026">Switch PDF templates to public_path and logo-full-color-pdf.png</td><td class="diff"><span class="add">+158</span> <span class="del">&minus;7</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-10-23">Friday, October 23, 2026</time></th><td class="msg" data-date="Friday, October 23, 2026">Keep payment-linked deliveries as cancelled instead of deleting them on checkin</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Friday, October 23, 2026">Remove unused AWS endpoint config and add Laravel Cloud disk note</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Friday, October 23, 2026">Move incident, invoice, and product images to object storage</td><td class="diff"><span class="add">+448</span> <span class="del">&minus;28</span></td></tr>
+<tr><td class="msg" data-date="Friday, October 23, 2026">Pin the MySQL session time zone to Jamaica</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Friday, October 23, 2026">Add sessions and cache tables for the database drivers</td><td class="diff"><span class="add">+87</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="6" class="date"><time datetime="2026-10-22">Thursday, October 22, 2026</time></th><td class="msg" data-date="Thursday, October 22, 2026">Add npm build script with the OpenSSL legacy flag</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 22, 2026">Store sea freight volume from feed dimensions, show dimensions on view</td><td class="diff"><span class="add">+79</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 22, 2026">Upgrade to Laravel 9</td><td class="diff"><span class="add">+1,600</span> <span class="del">&minus;1,282</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 22, 2026">Drop unused pusher/pusher-php-server</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;196</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 22, 2026">Run on PHP 8 (keeping PHP 7.4 working)</td><td class="diff"><span class="add">+246</span> <span class="del">&minus;99</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 22, 2026">Upgrade to Laravel 8</td><td class="diff"><span class="add">+2,010</span> <span class="del">&minus;1,044</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="6" class="date"><time datetime="2026-10-21">Wednesday, October 21, 2026</time></th><td class="msg" data-date="Wednesday, October 21, 2026">Upgrade to Laravel 7</td><td class="diff"><span class="add">+2,116</span> <span class="del">&minus;1,853</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 21, 2026">Upgrade to Laravel 6</td><td class="diff"><span class="add">+328</span> <span class="del">&minus;295</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 21, 2026">Upgrade to Laravel 5.8</td><td class="diff"><span class="add">+978</span> <span class="del">&minus;1,219</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 21, 2026">Restyle package create form flags as colored toggle tiles</td><td class="diff"><span class="add">+27</span> <span class="del">&minus;21</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 21, 2026">Call mailSeaFreightPayload before validation in package controller</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 21, 2026">Call mailSeaFreightPayload before validation in package controller</td><td class="diff"><span class="add">+42</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-10-20">Tuesday, October 20, 2026</time></th><td class="msg" data-date="Tuesday, October 20, 2026">Show activity timestamps as date with relative time</td><td class="diff"><span class="add">+12</span> <span class="del">&minus;13</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 20, 2026">Add high-value flag to packages: super-admin toggle on package view</td><td class="diff"><span class="add">+43</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-10-17">Saturday, October 17, 2026</time></th><td class="msg" data-date="Saturday, October 17, 2026">Enforce ownership on delivery, package, and checkout routes</td><td class="diff"><span class="add">+109</span> <span class="del">&minus;46</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-10-15">Thursday, October 15, 2026</time></th><td class="msg" data-date="Thursday, October 15, 2026">feat: show customs C number on package view</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 15, 2026">Record package custody scans from the RS25 Custody tab</td><td class="diff"><span class="add">+393</span> <span class="del">&minus;8</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-10-13">Tuesday, October 13, 2026</time></th><td class="msg" data-date="Tuesday, October 13, 2026">Add dangerous goods export (CSV/XLSX/PDF) and date-range filter</td><td class="diff"><span class="add">+692</span> <span class="del">&minus;25</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="4" class="date"><time datetime="2026-10-11">Sunday, October 11, 2026</time></th><td class="msg" data-date="Sunday, October 11, 2026">Add a delivery-only flag to branches</td><td class="diff"><span class="add">+194</span> <span class="del">&minus;15</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 11, 2026">Rename &quot;Branch Reports&quot; to &quot;Branch Tools&quot; in admin views and sidebar</td><td class="diff"><span class="add">+27</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 11, 2026">Add active-state pill styling to admin sidebar links</td><td class="diff"><span class="add">+80</span> <span class="del">&minus;44</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 11, 2026">Move Customers and Delivery into own sidebar sections, add Driver</td><td class="diff"><span class="add">+59</span> <span class="del">&minus;16</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="4" class="date"><time datetime="2026-10-10">Saturday, October 10, 2026</time></th><td class="msg" data-date="Saturday, October 10, 2026">Add branches:verify and make the branch normalisation self-reverting</td><td class="diff"><span class="add">+167</span> <span class="del">&minus;17</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 10, 2026">Center-align pay tile amount inputs</td><td class="diff"><span class="add">+8</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 10, 2026">Redesign checkout payment buttons as colored tiles with amount inputs</td><td class="diff"><span class="add">+400</span> <span class="del">&minus;94</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 10, 2026">Store branch codes everywhere, resolved through the branches table</td><td class="diff"><span class="add">+2,008</span> <span class="del">&minus;1,966</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-10-09">Friday, October 9, 2026</time></th><td class="msg" data-date="Friday, October 9, 2026">Rework sidebar sections and remove the Analytics page</td><td class="diff"><span class="add">+19</span> <span class="del">&minus;233</span></td></tr>
+<tr><td class="msg" data-date="Friday, October 9, 2026">Group admin sidebar links into sections by task</td><td class="diff"><span class="add">+171</span> <span class="del">&minus;121</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="14" class="date"><time datetime="2026-10-08">Thursday, October 8, 2026</time></th><td class="msg" data-date="Thursday, October 8, 2026">Show activity timestamps as date with relative time</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Make admin tables scroll sideways on mobile</td><td class="diff"><span class="add">+76</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add active-state pill styling to admin sidebar links</td><td class="diff"><span class="add">+32</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Swap flame icon for battery on Dangerous Goods sidebar link</td><td class="diff"><span class="add">+17</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Kiosk: require confirmation before switching branch</td><td class="diff"><span class="add">+29</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Kiosk: require confirmation before switching branch</td><td class="diff"><span class="add">+60</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Require kiosk branch selection on launch instead of defaulting to VILLAGE</td><td class="diff"><span class="add">+48</span> <span class="del">&minus;32</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add Inactive Accounts branch report with CSV/Excel/PDF export</td><td class="diff"><span class="add">+6</span> <span class="del">&minus;13</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add inactive accounts report with CSV/Excel/PDF export</td><td class="diff"><span class="add">+676</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add active-state pill styling to admin sidebar links</td><td class="diff"><span class="add">+35</span> <span class="del">&minus;29</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add Lucide icon support to admin sidebar via @icon directive</td><td class="diff"><span class="add">+621</span> <span class="del">&minus;31</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add card payment reconciliation: manual settle/close from transaction page</td><td class="diff"><span class="add">+515</span> <span class="del">&minus;24</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add branch reports page with checkin status labels</td><td class="diff"><span class="add">+536</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 8, 2026">Add online transactions CSV/Excel export with shared filters</td><td class="diff"><span class="add">+29,997</span> <span class="del">&minus;1</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="8" class="date"><time datetime="2026-10-07">Wednesday, October 7, 2026</time></th><td class="msg" data-date="Wednesday, October 7, 2026">Replace unlimited memory limit with 2048M in report controllers</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 7, 2026">Add GCT to handling fee in calculator and rates</td><td class="diff"><span class="add">+12</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 7, 2026">Extract partner summary into shared partial, add to transactions</td><td class="diff"><span class="add">+77</span> <span class="del">&minus;112</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 7, 2026">Move online transactions viewer from tools to reports</td><td class="diff"><span class="add">+31</span> <span class="del">&minus;27</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 7, 2026">Add customer sign-up drill-down from dashboard sparkline bars</td><td class="diff"><span class="add">+226</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 7, 2026">Add created index for points statements</td><td class="diff"><span class="add">+38</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 7, 2026">Skip points statements for dormant customers (6+ months inactive)</td><td class="diff"><span class="add">+34</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, October 7, 2026">Support sea freight pricing by volume with dedicated cu_ft column</td><td class="diff"><span class="add">+234</span> <span class="del">&minus;46</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="7" class="date"><time datetime="2026-10-06">Tuesday, October 6, 2026</time></th><td class="msg" data-date="Tuesday, October 6, 2026">Compare only elapsed days when the sales report range runs past today</td><td class="diff"><span class="add">+40</span> <span class="del">&minus;12</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 6, 2026">Tone down the previous-year badge on the sales report</td><td class="diff"><span class="add">+17</span> <span class="del">&minus;11</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 6, 2026">Add change vs previous year on the sales report</td><td class="diff"><span class="add">+75</span> <span class="del">&minus;25</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 6, 2026">Compare whole months against whole months on the sales report</td><td class="diff"><span class="add">+15</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 6, 2026">Label the previous period on the sales report</td><td class="diff"><span class="add">+39</span> <span class="del">&minus;11</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 6, 2026">Show change vs previous period on sales report</td><td class="diff"><span class="add">+56</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, October 6, 2026">Track refund creator and display in admin</td><td class="diff"><span class="add">+60</span> <span class="del">&minus;3</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-10-04">Sunday, October 4, 2026</time></th><td class="msg" data-date="Sunday, October 4, 2026">Style navy account buttons with solid ink</td><td class="diff"><span class="add">+8</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 4, 2026">Restyle delivery list with package row component</td><td class="diff"><span class="add">+93</span> <span class="del">&minus;37</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 4, 2026">Restyle receipt list with package row component</td><td class="diff"><span class="add">+82</span> <span class="del">&minus;39</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 4, 2026">Extract cardmark styles to separate stylesheet</td><td class="diff"><span class="add">+46</span> <span class="del">&minus;35</span></td></tr>
+<tr><td class="msg" data-date="Sunday, October 4, 2026">Display card brand marks in payment receipts</td><td class="diff"><span class="add">+78</span> <span class="del">&minus;5</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="11" class="date"><time datetime="2026-10-03">Saturday, October 3, 2026</time></th><td class="msg" data-date="Saturday, October 3, 2026">Restructure form checkboxes for accessibility and theme support</td><td class="diff"><span class="add">+15</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add compact issued display for coupon list, full details on show page</td><td class="diff"><span class="add">+33</span> <span class="del">&minus;11</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add coupon issuance tracking with admin attribution and filtering</td><td class="diff"><span class="add">+326</span> <span class="del">&minus;50</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Allow multiple coupon redemptions per customer</td><td class="diff"><span class="add">+364</span> <span class="del">&minus;72</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add coupon creation form and code export</td><td class="diff"><span class="add">+443</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add coupon claim links and shareable cards</td><td class="diff"><span class="add">+1,377</span> <span class="del">&minus;34</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add coupon show page with redemption history and batch stats</td><td class="diff"><span class="add">+167</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Remove account delivery view</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;135</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add express pickups to unified check-in</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add express pickups to unified check-in</td><td class="diff"><span class="add">+58</span> <span class="del">&minus;57</span></td></tr>
+<tr><td class="msg" data-date="Saturday, October 3, 2026">Add deliveries and receipts tabs with independent pagination</td><td class="diff"><span class="add">+233</span> <span class="del">&minus;72</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-10-01">Thursday, October 1, 2026</time></th><td class="msg" data-date="Thursday, October 1, 2026">Bump CSS versions for the PowerTranz styles</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 1, 2026">Fix online card totals on the date-only report filter</td><td class="diff"><span class="add">+58</span> <span class="del">&minus;22</span></td></tr>
+<tr><td class="msg" data-date="Thursday, October 1, 2026">Fix navbar layout and remove rocket label text</td><td class="diff"><span class="add">+33</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="8" class="date"><time datetime="2026-09-30">Wednesday, September 30, 2026</time></th><td class="msg" data-date="Wednesday, September 30, 2026">Schedule daily points report at midnight</td><td class="diff"><span class="add">+450</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 30, 2026">Remove old points schedule report in favor of V2</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;866</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 30, 2026">Schedule month-end points expiry and consolidate logic to PointsLedger</td><td class="diff"><span class="add">+1,033</span> <span class="del">&minus;118</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 30, 2026">Speed up push broadcasts with concurrent delivery</td><td class="diff"><span class="add">+195</span> <span class="del">&minus;105</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 30, 2026">Add admin push notification tool</td><td class="diff"><span class="add">+931</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 30, 2026">Disable till payment options when the sale is already paid online</td><td class="diff"><span class="add">+86</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 30, 2026">Let prepaid packages check out at the till without a tender</td><td class="diff"><span class="add">+89</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 30, 2026">Add GiftMe payment option to the cashier till</td><td class="diff"><span class="add">+307</span> <span class="del">&minus;18</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="4" class="date"><time datetime="2026-09-29">Tuesday, September 29, 2026</time></th><td class="msg" data-date="Tuesday, September 29, 2026">Add other reason type with custom description</td><td class="diff"><span class="add">+126</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 29, 2026">Include only collected packages in checkout receipts</td><td class="diff"><span class="add">+61</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 29, 2026">Remove clear all checkins feature</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;119</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 29, 2026">Replace journey scroll animation with live tracking console</td><td class="diff"><span class="add">+1,753</span> <span class="del">&minus;1,297</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-09-23">Wednesday, September 23, 2026</time></th><td class="msg" data-date="Wednesday, September 23, 2026">Meet PowerTranz website and receipt requirements</td><td class="diff"><span class="add">+970</span> <span class="del">&minus;58</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 23, 2026">Check delivery ownership on cancel, reschedule and delete</td><td class="diff"><span class="add">+295</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 23, 2026">Remove users.branch_code, route all branch reads through accounts</td><td class="diff"><span class="add">+382</span> <span class="del">&minus;221</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 23, 2026">Adapt production&#x27;s branch reads to the dropped name columns</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;10</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 23, 2026">Resync user branch from primary account</td><td class="diff"><span class="add">+18</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="4" class="date"><time datetime="2026-09-22">Tuesday, September 22, 2026</time></th><td class="msg" data-date="Tuesday, September 22, 2026">Replace branch_name with branch() relation</td><td class="diff"><span class="add">+542</span> <span class="del">&minus;195</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 22, 2026">Use AccountBranch helper for account-aware branch reporting</td><td class="diff"><span class="add">+105</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 22, 2026">Detect blocked cookies in curbside check-in</td><td class="diff"><span class="add">+176</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 22, 2026">Implement curbside check-in with vehicle details</td><td class="diff"><span class="add">+1,968</span> <span class="del">&minus;246</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-09-21">Monday, September 21, 2026</time></th><td class="msg" data-date="Monday, September 21, 2026">Resync account branch from users</td><td class="diff"><span class="add">+78</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="4" class="date"><time datetime="2026-09-20">Sunday, September 20, 2026</time></th><td class="msg" data-date="Sunday, September 20, 2026">Add receipt display and payment method branding</td><td class="diff"><span class="add">+505</span> <span class="del">&minus;26</span></td></tr>
+<tr><td class="msg" data-date="Sunday, September 20, 2026">Remove user name fallback from card form field</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Sunday, September 20, 2026">Add quick actions for bulk package delivery and payment</td><td class="diff"><span class="add">+645</span> <span class="del">&minus;262</span></td></tr>
+<tr><td class="msg" data-date="Sunday, September 20, 2026">Redesign package list with accessible status chips and eager loading</td><td class="diff"><span class="add">+443</span> <span class="del">&minus;46</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="11" class="date"><time datetime="2026-09-19">Saturday, September 19, 2026</time></th><td class="msg" data-date="Saturday, September 19, 2026">Redesign receipt view with grid-based card layout and improved styling</td><td class="diff"><span class="add">+302</span> <span class="del">&minus;148</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Display gateway transaction details on receipt</td><td class="diff"><span class="add">+105</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Display payment gateway logos on receipt</td><td class="diff"><span class="add">+303</span> <span class="del">&minus;26</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Add payment instrument styling and redesign receipt</td><td class="diff"><span class="add">+90</span> <span class="del">&minus;47</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Implement customer receipt listing and PDF download</td><td class="diff"><span class="add">+1,237</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Implement PayPal reconciliation and server-side capture</td><td class="diff"><span class="add">+2,343</span> <span class="del">&minus;249</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Implement card payment reconciliation sweep</td><td class="diff"><span class="add">+1,527</span> <span class="del">&minus;83</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Implement Lynk reconciliation and extract settlement logic</td><td class="diff"><span class="add">+1,698</span> <span class="del">&minus;687</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Remove payTest smoke test, add card payment instrument tests</td><td class="diff"><span class="add">+139</span> <span class="del">&minus;57</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Drop the folded callback_note column</td><td class="diff"><span class="add">+128</span> <span class="del">&minus;21</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 19, 2026">Replace whereDate with DayRange for index-friendly filtering</td><td class="diff"><span class="add">+539</span> <span class="del">&minus;382</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="9" class="date"><time datetime="2026-09-18">Friday, September 18, 2026</time></th><td class="msg" data-date="Friday, September 18, 2026">Make transactions record the account that paid and the instrument used</td><td class="diff"><span class="add">+444</span> <span class="del">&minus;2,628</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Generalise the transactions ledger across gateways</td><td class="diff"><span class="add">+1,434</span> <span class="del">&minus;26</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Adopt dashboard styling for delivery and card forms</td><td class="diff"><span class="add">+550</span> <span class="del">&minus;597</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Refactor PowerTranz and track online card payments</td><td class="diff"><span class="add">+2,144</span> <span class="del">&minus;377</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Add package ID to warehouse board display</td><td class="diff"><span class="add">+28</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Show disabled package action reason on hover</td><td class="diff"><span class="add">+60</span> <span class="del">&minus;25</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Release packages from deleted check-ins and stabilize timer display</td><td class="diff"><span class="add">+163</span> <span class="del">&minus;18</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Allow deleting check-ins from cashier queue without sale</td><td class="diff"><span class="add">+493</span> <span class="del">&minus;7</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 18, 2026">Track check-in completion with status and cashier ID</td><td class="diff"><span class="add">+297</span> <span class="del">&minus;4</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="15" class="date"><time datetime="2026-09-17">Thursday, September 17, 2026</time></th><td class="msg" data-date="Thursday, September 17, 2026">Show package ID in checkin view and enable asset cache busting</td><td class="diff"><span class="add">+42</span> <span class="del">&minus;10</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Show deleted customer status in account and package views</td><td class="diff"><span class="add">+84</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Refactor email templates to use base layout inheritance</td><td class="diff"><span class="add">+40</span> <span class="del">&minus;522</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Drop redundant activity indexes and shrink columns</td><td class="diff"><span class="add">+104</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Require refund amount and separate from payout currency</td><td class="diff"><span class="add">+184</span> <span class="del">&minus;30</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Add filtering to package activity history</td><td class="diff"><span class="add">+67</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Fix checkout payment linking to collected packages</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Expand payment branch aliases for report grouping</td><td class="diff"><span class="add">+11</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Make the cashier list more concise on payment reports.</td><td class="diff"><span class="add">+33</span> <span class="del">&minus;17</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Add RecoverLynkPayments console command</td><td class="diff"><span class="add">+293</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Add last activity timestamp to admin dashboard</td><td class="diff"><span class="add">+99</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Add yesterday preset to admin report date range</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Seed new account email from user</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Add the 16 Sep PayPal export used for the outage recovery</td><td class="diff"><span class="add">+38</span> <span class="del">&minus;16</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 17, 2026">Refuse PayPal rows without a transaction id in recovery</td><td class="diff"><span class="add">+16</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="7" class="date"><time datetime="2026-09-16">Wednesday, September 16, 2026</time></th><td class="msg" data-date="Wednesday, September 16, 2026">Restore Payment::claim and add PayPal outage recovery</td><td class="diff"><span class="add">+1,429</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 16, 2026">Add last activity timestamp to admin dashboard</td><td class="diff"><span class="add">+37</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 16, 2026">Display delivery creation timestamp</td><td class="diff"><span class="add">+380</span> <span class="del">&minus;284</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 16, 2026">Display delivery creation timestamp</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 16, 2026">Read points from user wallet instead of account</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 16, 2026">Add air/sea freight filtering to unprocessed packages</td><td class="diff"><span class="add">+95</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 16, 2026">Set payment branch at creation; optimize backfill chunking</td><td class="diff"><span class="add">+61</span> <span class="del">&minus;12</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-09-15">Tuesday, September 15, 2026</time></th><td class="msg" data-date="Tuesday, September 15, 2026">Fix btn-default label readability on hover/focus/active</td><td class="diff"><span class="add">+11</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 15, 2026">Display branch code on package details</td><td class="diff"><span class="add">+213</span> <span class="del">&minus;30</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 15, 2026">Gate self-serve account creation behind feature flag</td><td class="diff"><span class="add">+298</span> <span class="del">&minus;7</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-09-14">Monday, September 14, 2026</time></th><td class="msg" data-date="Monday, September 14, 2026">Use account branch code for account page check-ins</td><td class="diff"><span class="add">+63</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 14, 2026">Make customer lookup return accounts instead of users</td><td class="diff"><span class="add">+116</span> <span class="del">&minus;130</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-09-10">Thursday, September 10, 2026</time></th><td class="msg" data-date="Thursday, September 10, 2026">Remove unused inspire command and Inspiring import</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;15</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-09-09">Wednesday, September 9, 2026</time></th><td class="msg" data-date="Wednesday, September 9, 2026">Add the Phase 9 cutover runbook</td><td class="diff"><span class="add">+281</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-09-08">Tuesday, September 8, 2026</time></th><td class="msg" data-date="Tuesday, September 8, 2026">Move the payments user_id repair out of the migration into a command</td><td class="diff"><span class="add">+822</span> <span class="del">&minus;84</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 8, 2026">Add invoice authorization and account-scoped preferences</td><td class="diff"><span class="add">+582</span> <span class="del">&minus;16</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 8, 2026">Order the shipment exports by package id explicitly</td><td class="diff"><span class="add">+69</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 8, 2026">Sort the clearance list by mailbox name, not login name</td><td class="diff"><span class="add">+210</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 8, 2026">Add the [D6] drift guard so nobody has to remember to look</td><td class="diff"><span class="add">+579</span> <span class="del">&minus;33</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="10" class="date"><time datetime="2026-09-07">Monday, September 7, 2026</time></th><td class="msg" data-date="Monday, September 7, 2026">Close the reporting group - five of six were never defects</td><td class="diff"><span class="add">+47</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Consolidate the three account documents into one authority</td><td class="diff"><span class="add">+81</span> <span class="del">&minus;32</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Add the two Phase 8 tests that guard the cutover</td><td class="diff"><span class="add">+444</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Reconcile the migration plan against the code</td><td class="diff"><span class="add">+204</span> <span class="del">&minus;82</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Close the last checklist item - receipts landed in 1cd0a1d</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Resolve an email lookup by rule instead of by row order</td><td class="diff"><span class="add">+137</span> <span class="del">&minus;39</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Attribute every payment to the mailbox that was settled</td><td class="diff"><span class="add">+1,217</span> <span class="del">&minus;169</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Scope checkout receipts to recipient&#x27;s own packages</td><td class="diff"><span class="add">+708</span> <span class="del">&minus;84</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Fix checkout payment linking to collected packages</td><td class="diff"><span class="add">+39</span> <span class="del">&minus;39</span></td></tr>
+<tr><td class="msg" data-date="Monday, September 7, 2026">Key checkins and settlement by account instead of login</td><td class="diff"><span class="add">+631</span> <span class="del">&minus;100</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-09-06">Sunday, September 6, 2026</time></th><td class="msg" data-date="Sunday, September 6, 2026">Defer notification emails until settlement commits, handle errors</td><td class="diff"><span class="add">+62</span> <span class="del">&minus;23</span></td></tr>
+<tr><td class="msg" data-date="Sunday, September 6, 2026">Guard against deleted referrers in referral processing</td><td class="diff"><span class="add">+43</span> <span class="del">&minus;13</span></td></tr>
+<tr><td class="msg" data-date="Sunday, September 6, 2026">Make points wallets per-login, shared across mailboxes</td><td class="diff"><span class="add">+102</span> <span class="del">&minus;137</span></td></tr>
+<tr><td class="msg" data-date="Sunday, September 6, 2026">Delete migration adding account_id to points tables</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;177</span></td></tr>
+<tr><td class="msg" data-date="Sunday, September 6, 2026">Restore direct user relations and sync user_id with accounts</td><td class="diff"><span class="add">+199</span> <span class="del">&minus;289</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="6" class="date"><time datetime="2026-09-05">Saturday, September 5, 2026</time></th><td class="msg" data-date="Saturday, September 5, 2026">Make package reassignment and refunds account-aware</td><td class="diff"><span class="add">+23</span> <span class="del">&minus;7</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 5, 2026">Make exports and admin views account-aware</td><td class="diff"><span class="add">+137</span> <span class="del">&minus;70</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 5, 2026">Route FCM notifications to mailbox owner and personalize greetings</td><td class="diff"><span class="add">+115</span> <span class="del">&minus;63</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 5, 2026">Make manifests and invoices account-aware with user fallback</td><td class="diff"><span class="add">+17</span> <span class="del">&minus;13</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 5, 2026">Replace login-scoped auth checks with account-aware policies</td><td class="diff"><span class="add">+112</span> <span class="del">&minus;31</span></td></tr>
+<tr><td class="msg" data-date="Saturday, September 5, 2026">Attribute packages and child records to accounts, not logins</td><td class="diff"><span class="add">+728</span> <span class="del">&minus;98</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-09-04">Friday, September 4, 2026</time></th><td class="msg" data-date="Friday, September 4, 2026">Fix checkout payment linking to collected packages</td><td class="diff"><span class="add">+36</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 4, 2026">Add active state styling to main navigation links</td><td class="diff"><span class="add">+16</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Friday, September 4, 2026">Redesign welcome email template for improved layout and clarity</td><td class="diff"><span class="add">+85</span> <span class="del">&minus;48</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="9" class="date"><time datetime="2026-09-03">Thursday, September 3, 2026</time></th><td class="msg" data-date="Thursday, September 3, 2026">Add daily drill-down and caching to points schedule report</td><td class="diff"><span class="add">+511</span> <span class="del">&minus;93</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Add Points Schedule V2 report with rolling 12-month expiration</td><td class="diff"><span class="add">+270</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Fix status breakdown visibility in shipment view</td><td class="diff"><span class="add">+6</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Add status 27 to clearing and fix breakdown display logic</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Add status breakdown grouping to shipment view</td><td class="diff"><span class="add">+120</span> <span class="del">&minus;63</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Add receivedInMiamiPackages tracking to shipment view</td><td class="diff"><span class="add">+13</span> <span class="del">&minus;20</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Standardize page titles across views</td><td class="diff"><span class="add">+46</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Standardize page titles across views</td><td class="diff"><span class="add">+36</span> <span class="del">&minus;18</span></td></tr>
+<tr><td class="msg" data-date="Thursday, September 3, 2026">Refactor FAQs with search, category filters, and accordion design</td><td class="diff"><span class="add">+975</span> <span class="del">&minus;220</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="19" class="date"><time datetime="2026-09-02">Wednesday, September 2, 2026</time></th><td class="msg" data-date="Wednesday, September 2, 2026">Add active state styling to main navigation links</td><td class="diff"><span class="add">+41</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add active state styling to main navigation links</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add admin tools section with navigation and routes</td><td class="diff"><span class="add">+296</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add contact form validation and redesign contact page</td><td class="diff"><span class="add">+476</span> <span class="del">&minus;533</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Redesign footer with organized grid layout and styling</td><td class="diff"><span class="add">+265</span> <span class="del">&minus;107</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Improve careers empty state design and messaging</td><td class="diff"><span class="add">+37</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Simplify careers page forms and styling</td><td class="diff"><span class="add">+8</span> <span class="del">&minus;71</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Separate processing fees from handling fees in sea freight reporting</td><td class="diff"><span class="add">+35</span> <span class="del">&minus;18</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Reorganize sales report layout with freight breakdowns</td><td class="diff"><span class="add">+19</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add date range validation to sales reports</td><td class="diff"><span class="add">+70</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Extract date range inputs to partial</td><td class="diff"><span class="add">+502</span> <span class="del">&minus;21</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add Other category to sales split for reconciliation</td><td class="diff"><span class="add">+31</span> <span class="del">&minus;9</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add tooltips to sales categories and tighten tiles layout</td><td class="diff"><span class="add">+68</span> <span class="del">&minus;38</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Reorganize sales report layout with freight breakdowns</td><td class="diff"><span class="add">+53</span> <span class="del">&minus;50</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add Other category to sales split for reconciliation</td><td class="diff"><span class="add">+37</span> <span class="del">&minus;7</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Add delayed packages count to admin shipment index</td><td class="diff"><span class="add">+7</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Optimize sales report with async freight queries and packages export</td><td class="diff"><span class="add">+422</span> <span class="del">&minus;65</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Simplify delayed package notification message</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, September 2, 2026">Move Turnstile widgets below submit buttons with styling</td><td class="diff"><span class="add">+15</span> <span class="del">&minus;8</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-09-01">Tuesday, September 1, 2026</time></th><td class="msg" data-date="Tuesday, September 1, 2026">Add Turnstile CAPTCHA to public forms</td><td class="diff"><span class="add">+246</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 1, 2026">Set registration channel on user creation</td><td class="diff"><span class="add">+52</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, September 1, 2026">Add careers feature with job postings and applications</td><td class="diff"><span class="add">+3,504</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="4" class="date"><time datetime="2026-08-31">Monday, August 31, 2026</time></th><td class="msg" data-date="Monday, August 31, 2026">Add registration rate limiting and honeypot component</td><td class="diff"><span class="add">+136</span> <span class="del">&minus;19</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 31, 2026">Backfill incident report account IDs</td><td class="diff"><span class="add">+53</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 31, 2026">Resolve refunds to accounts with legacy user fallback</td><td class="diff"><span class="add">+226</span> <span class="del">&minus;17</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 31, 2026">Scope incidents and refunds to accounts</td><td class="diff"><span class="add">+263</span> <span class="del">&minus;56</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="18" class="date"><time datetime="2026-08-30">Sunday, August 30, 2026</time></th><td class="msg" data-date="Sunday, August 30, 2026">Backfill account email from users table</td><td class="diff"><span class="add">+60</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Add phone field to Account; resolve metadata through accounts</td><td class="diff"><span class="add">+165</span> <span class="del">&minus;102</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Extract account descriptors into DescribesAccount trait</td><td class="diff"><span class="add">+148</span> <span class="del">&minus;76</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Scope deliveries to accounts with user fallback for legacy rows</td><td class="diff"><span class="add">+143</span> <span class="del">&minus;37</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Display tracking numbers in delivery confirmation email</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Scope pickup packages to active account and display tracking numbers</td><td class="diff"><span class="add">+27</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Require active account when creating deliveries</td><td class="diff"><span class="add">+36</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Scope delivery packages to active account and display tracking numbers</td><td class="diff"><span class="add">+22</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Refactor dormancy check across customer accounts</td><td class="diff"><span class="add">+258</span> <span class="del">&minus;26</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Persist cashier branch filter across page reloads</td><td class="diff"><span class="add">+173</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Position account_id columns after related foreign keys</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Override theme button hover styling</td><td class="diff"><span class="add">+38</span> <span class="del">&minus;7</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Add package reweigh feature with automatic charge recalculation</td><td class="diff"><span class="add">+932</span> <span class="del">&minus;12</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Refactor package detail view with custom styling</td><td class="diff"><span class="add">+160</span> <span class="del">&minus;30</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Add package detail view to checkout</td><td class="diff"><span class="add">+654</span> <span class="del">&minus;246</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Add weight column to checkout verification</td><td class="diff"><span class="add">+7</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Switch warehouse feed to resolve accounts instead of users</td><td class="diff"><span class="add">+29</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 30, 2026">Report sea freight statistics by account instead of user</td><td class="diff"><span class="add">+32</span> <span class="del">&minus;22</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="24" class="date"><time datetime="2026-08-29">Saturday, August 29, 2026</time></th><td class="msg" data-date="Saturday, August 29, 2026">Remove new accounts metric from branch report</td><td class="diff"><span class="add">+25</span> <span class="del">&minus;31</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Report branch statistics by account instead of user</td><td class="diff"><span class="add">+36</span> <span class="del">&minus;25</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Report aged uncollected packages per account instead of user</td><td class="diff"><span class="add">+34</span> <span class="del">&minus;29</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Replace inline setState with selectPackage method</td><td class="diff"><span class="add">+49</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Update checkout receipt email subject and filename</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Send checkout receipts to account mailboxes</td><td class="diff"><span class="add">+101</span> <span class="del">&minus;23</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Use asset helper for checkout receipt logo URL</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Restructure checkout receipt to use table layout for email clients</td><td class="diff"><span class="add">+376</span> <span class="del">&minus;385</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Send checkout receipts to account mailboxes</td><td class="diff"><span class="add">+91</span> <span class="del">&minus;24</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Fix the formating of the pickup section of the accounts page</td><td class="diff"><span class="add">+50</span> <span class="del">&minus;54</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Add check-in from account view with warehouse/cashier routing</td><td class="diff"><span class="add">+372</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Redirect checkin index to warehouse and move list to separate route</td><td class="diff"><span class="add">+11</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Add cashier feed polling and redesigned checkout UI</td><td class="diff"><span class="add">+743</span> <span class="del">&minus;89</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Add chime notifications and empty state components</td><td class="diff"><span class="add">+605</span> <span class="del">&minus;130</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Remove Pusher real-time broadcast functionality</td><td class="diff"><span class="add">+15</span> <span class="del">&minus;379</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Mute cancel button on accepted check-in cards</td><td class="diff"><span class="add">+330</span> <span class="del">&minus;129</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Fix formatting and layout of the warehouse board cards.</td><td class="diff"><span class="add">+64</span> <span class="del">&minus;7</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Guard check-in state on status instead of worker_id</td><td class="diff"><span class="add">+50</span> <span class="del">&minus;13</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Add check-in status and warehouse board actions</td><td class="diff"><span class="add">+434</span> <span class="del">&minus;30</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Highlight shelf location and display weight on warehouse board</td><td class="diff"><span class="add">+45</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Refactor check-in feed to use polling API with branch filtering</td><td class="diff"><span class="add">+1,350</span> <span class="del">&minus;627</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Scope kiosk checkin to accounts with mailbox support</td><td class="diff"><span class="add">+410</span> <span class="del">&minus;80</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Seed account email and phone from login address</td><td class="diff"><span class="add">+33</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Saturday, August 29, 2026">Scope partner admin from users to accounts</td><td class="diff"><span class="add">+304</span> <span class="del">&minus;46</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="7" class="date"><time datetime="2026-08-28">Friday, August 28, 2026</time></th><td class="msg" data-date="Friday, August 28, 2026">Remove login fallback from package mailbox column</td><td class="diff"><span class="add">+82</span> <span class="del">&minus;95</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 28, 2026">Paginate packages and permission-gate revenue totals</td><td class="diff"><span class="add">+44</span> <span class="del">&minus;20</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 28, 2026">Display account name and mailbox in package exports</td><td class="diff"><span class="add">+54</span> <span class="del">&minus;19</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 28, 2026">Display account name and mailbox in admin package list</td><td class="diff"><span class="add">+155</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 28, 2026">Move account actions to top and balance customer info cards</td><td class="diff"><span class="add">+85</span> <span class="del">&minus;53</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 28, 2026">Refactor admin customer section to separate users and accounts</td><td class="diff"><span class="add">+3,234</span> <span class="del">&minus;1,442</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 28, 2026">Route notifications to account email instead of user email</td><td class="diff"><span class="add">+89</span> <span class="del">&minus;30</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="9" class="date"><time datetime="2026-08-27">Thursday, August 27, 2026</time></th><td class="msg" data-date="Thursday, August 27, 2026">Add account-level notification email and preferences</td><td class="diff"><span class="add">+319</span> <span class="del">&minus;79</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Move mailbox name above number and apply flat variant</td><td class="diff"><span class="add">+53</span> <span class="del">&minus;54</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Inline card actions and make package filters optional</td><td class="diff"><span class="add">+49</span> <span class="del">&minus;29</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Move points balance from header chip to content card</td><td class="diff"><span class="add">+67</span> <span class="del">&minus;6</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Move mailbox card from nav to page headers</td><td class="diff"><span class="add">+165</span> <span class="del">&minus;113</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Rename settings routes to accounts and add navy theme</td><td class="diff"><span class="add">+188</span> <span class="del">&minus;134</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Allow users to open additional mailbox accounts</td><td class="diff"><span class="add">+521</span> <span class="del">&minus;15</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Add account switcher to mailbox card</td><td class="diff"><span class="add">+755</span> <span class="del">&minus;22</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 27, 2026">Add login and password editors to settings page</td><td class="diff"><span class="add">+624</span> <span class="del">&minus;19</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-08-26">Wednesday, August 26, 2026</time></th><td class="msg" data-date="Wednesday, August 26, 2026">Consolidate editor exit logic into EditScreen utility</td><td class="diff"><span class="add">+448</span> <span class="del">&minus;408</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 26, 2026">Move account editing from modal to dedicated screen</td><td class="diff"><span class="add">+280</span> <span class="del">&minus;144</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 26, 2026">Add account name field to refunds</td><td class="diff"><span class="add">+61</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="6" class="date"><time datetime="2026-08-25">Tuesday, August 25, 2026</time></th><td class="msg" data-date="Tuesday, August 25, 2026">Add sea freight report to admin dashboard</td><td class="diff"><span class="add">+824</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 25, 2026">Clean up driver tool nav bar</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 25, 2026">Center brand logo in driver admin topbar</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 25, 2026">Extract delivery closure operations into trait and add driver controller</td><td class="diff"><span class="add">+940</span> <span class="del">&minus;114</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 25, 2026">Extract account options and add account selection to settings</td><td class="diff"><span class="add">+1,808</span> <span class="del">&minus;355</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 25, 2026">Scope customer data to active account instead of login</td><td class="diff"><span class="add">+1,681</span> <span class="del">&minus;158</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-08-22">Saturday, August 22, 2026</time></th><td class="msg" data-date="Saturday, August 22, 2026">Fix package branch_code to use user record instead of account</td><td class="diff"><span class="add">+6</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-08-20">Thursday, August 20, 2026</time></th><td class="msg" data-date="Thursday, August 20, 2026">Add usage donut chart and 7-day signup history to admin dashboard</td><td class="diff"><span class="add">+296</span> <span class="del">&minus;55</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 20, 2026">Split mobile platform tracking to distinguish iOS and Android</td><td class="diff"><span class="add">+111</span> <span class="del">&minus;16</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 20, 2026">Prevent duplicate refunds by tracking number</td><td class="diff"><span class="add">+105</span> <span class="del">&minus;7</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-08-19">Wednesday, August 19, 2026</time></th><td class="msg" data-date="Wednesday, August 19, 2026">Adjust admin dashboard grid layout</td><td class="diff"><span class="add">+33</span> <span class="del">&minus;9</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 19, 2026">Add platform icons to admin dashboard usage display</td><td class="diff"><span class="add">+34</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 19, 2026">Track platform usage and display on admin dashboard</td><td class="diff"><span class="add">+218</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 19, 2026">Require tracking number when no package selected</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 19, 2026">Support refunds for packages that never arrived at warehouse</td><td class="diff"><span class="add">+948</span> <span class="del">&minus;166</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-08-18">Tuesday, August 18, 2026</time></th><td class="msg" data-date="Tuesday, August 18, 2026">Refactor branch selection to modal dialog</td><td class="diff"><span class="add">+106</span> <span class="del">&minus;61</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 18, 2026">Make kiosk interface responsive with fluid sizing and media queries</td><td class="diff"><span class="add">+446</span> <span class="del">&minus;11</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 18, 2026">Add RCJ data conversion plan</td><td class="diff"><span class="add">+471</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="9" class="date"><time datetime="2026-08-17">Monday, August 17, 2026</time></th><td class="msg" data-date="Monday, August 17, 2026">Phase 3: active-account context, middleware, switcher and policies [D5]</td><td class="diff"><span class="add">+1,084</span> <span class="del">&minus;29</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">Add TRANSIT_HQ status to unprocessed packages logic</td><td class="diff"><span class="add">+6</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">Use user branch code instead of account branch code</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">P1.12: add accounts:verify instead of the specified backfill migration</td><td class="diff"><span class="add">+477</span> <span class="del">&minus;7</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">P1.3: add account_id to payments [D4]</td><td class="diff"><span class="add">+415</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">P1.4a steps 1-2: stage the Lynk column rename on transactions</td><td class="diff"><span class="add">+244</span> <span class="del">&minus;19</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">P1.10: add account_id indexes mirroring the user_id ones</td><td class="diff"><span class="add">+313</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">P1.6/P1.7: add account_id to refunds and authorized_people</td><td class="diff"><span class="add">+491</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 17, 2026">P1.1/P1.2/P1.5: add account_id to deliveries, pickups and orders</td><td class="diff"><span class="add">+396</span> <span class="del">&minus;5</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-08-16">Sunday, August 16, 2026</time></th><td class="msg" data-date="Sunday, August 16, 2026">P1.8: move saved addresses to accounts [D2]</td><td class="diff"><span class="add">+307</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 16, 2026">P1.9: move loyalty points to accounts [D1]</td><td class="diff"><span class="add">+564</span> <span class="del">&minus;38</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 16, 2026">P1.11: add is_primary to accounts with a one-primary-per-user constraint</td><td class="diff"><span class="add">+433</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 16, 2026">Fix IDOR in address and authorized-person delete endpoints</td><td class="diff"><span class="add">+219</span> <span class="del">&minus;18</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 16, 2026">Add account migration plan</td><td class="diff"><span class="add">+508</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-08-15">Saturday, August 15, 2026</time></th><td class="msg" data-date="Saturday, August 15, 2026">Update storage begins calculation to 31 days in package reminder email</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-08-14">Friday, August 14, 2026</time></th><td class="msg" data-date="Friday, August 14, 2026">Fix malformed a tag</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 14, 2026">Update storage begins calculation to 31 days in package reminder email</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Friday, August 14, 2026">Change default pickup branch to East Kings House Road</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-08-13">Thursday, August 13, 2026</time></th><td class="msg" data-date="Thursday, August 13, 2026">Redesign admin package index with eager loading</td><td class="diff"><span class="add">+307</span> <span class="del">&minus;475</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 13, 2026">Redesign customer index page with improved layout and styling</td><td class="diff"><span class="add">+184</span> <span class="del">&minus;112</span></td></tr>
+<tr><td class="msg" data-date="Thursday, August 13, 2026">Format the JMD and USD number figures. on accounts</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-08-12">Wednesday, August 12, 2026</time></th><td class="msg" data-date="Wednesday, August 12, 2026">Update accounts when customer branch changes</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 12, 2026">Add Dumbarton branch to customer branch selector</td><td class="diff"><span class="add">+9</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 12, 2026">Refine admin package view styling and layout</td><td class="diff"><span class="add">+23</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 12, 2026">Reorganize filters to grid layout with status dropdown</td><td class="diff"><span class="add">+54</span> <span class="del">&minus;37</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 12, 2026">Add status filtering and export to unprocessed packages</td><td class="diff"><span class="add">+208</span> <span class="del">&minus;24</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-08-11">Tuesday, August 11, 2026</time></th><td class="msg" data-date="Tuesday, August 11, 2026">Add dangerous goods package notifications</td><td class="diff"><span class="add">+91</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 11, 2026">Lock refund payout currency to JMD, set by admin at creation</td><td class="diff"><span class="add">+39</span> <span class="del">&minus;25</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-08-10">Monday, August 10, 2026</time></th><td class="msg" data-date="Monday, August 10, 2026">Add export functionality for aged-uncollected report</td><td class="diff"><span class="add">+95</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 10, 2026">Add dangerous goods bulk shipment assignment</td><td class="diff"><span class="add">+243</span> <span class="del">&minus;16</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 10, 2026">Add east_kings to checkin filter choices</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-08-05">Wednesday, August 5, 2026</time></th><td class="msg" data-date="Wednesday, August 5, 2026">Modernize admin customer and package views with improved styling</td><td class="diff"><span class="add">+322</span> <span class="del">&minus;278</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 5, 2026">Remove customs charges functionality</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;75</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 5, 2026">Add east_kings to checkin filter choices</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 5, 2026">Add east_kings to checkin filter choices</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, August 5, 2026">Remove Space Grotesk from font stacks</td><td class="diff"><span class="add">+12</span> <span class="del">&minus;10</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="5" class="date"><time datetime="2026-08-04">Tuesday, August 4, 2026</time></th><td class="msg" data-date="Tuesday, August 4, 2026">Hide Request Refund option in package view</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 4, 2026">Hide value row on the customer package details</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;5</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 4, 2026">Hide Request Refund option in package view</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 4, 2026">Hide Request Refund option in package view</td><td class="diff"><span class="add">+7</span> <span class="del">&minus;10</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, August 4, 2026">Centralize package status filters and add UI navigation</td><td class="diff"><span class="add">+136</span> <span class="del">&minus;60</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="10" class="date"><time datetime="2026-08-03">Monday, August 3, 2026</time></th><td class="msg" data-date="Monday, August 3, 2026">Update navbar logo to LogoInlineColorWhite</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Add top padding to customer page content</td><td class="diff"><span class="add">+11</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Refactor navbar navigation with active state detection</td><td class="diff"><span class="add">+30</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Redesign shipping cost calculator page</td><td class="diff"><span class="add">+574</span> <span class="del">&minus;317</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Add package activities to package detail screen for customers.</td><td class="diff"><span class="add">+67</span> <span class="del">&minus;15</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Redesign activity timeline with day bands</td><td class="diff"><span class="add">+73</span> <span class="del">&minus;44</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Added branch code card to the dashboard view</td><td class="diff"><span class="add">+144</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Fix MailboxResolver handling of mailbox ID 0</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Refresh customer facing view designs</td><td class="diff"><span class="add">+2,829</span> <span class="del">&minus;1,692</span></td></tr>
+<tr><td class="msg" data-date="Monday, August 3, 2026">Add package status validation and normalize to uppercase</td><td class="diff"><span class="add">+8</span> <span class="del">&minus;7</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-08-02">Sunday, August 2, 2026</time></th><td class="msg" data-date="Sunday, August 2, 2026">Update mobile auth logo to colored version</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 2, 2026">Add landing page typography with Space Grotesk and Space Mono</td><td class="diff"><span class="add">+69</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Sunday, August 2, 2026">Redesign auth pages with new layout and styling</td><td class="diff"><span class="add">+1,137</span> <span class="del">&minus;405</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-08-01">Saturday, August 1, 2026</time></th><td class="msg" data-date="Saturday, August 1, 2026">Hide Request Refund option in package view</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="8" class="date"><time datetime="2026-07-31">Friday, July 31, 2026</time></th><td class="msg" data-date="Friday, July 31, 2026">Add permission-based admin dashboard with stats tiles</td><td class="diff"><span class="add">+264</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 31, 2026">Remove permission creation from admin UI</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;36</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 31, 2026">Add role detail page and redesign permissions UI</td><td class="diff"><span class="add">+271</span> <span class="del">&minus;182</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 31, 2026">Filter payment report queries by branch aliases</td><td class="diff"><span class="add">+27</span> <span class="del">&minus;10</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 31, 2026">Hide pick-up menu item from admin sidebar</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 31, 2026">Move admin logo to fixed sidebar on desktop</td><td class="diff"><span class="add">+12</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 31, 2026">Filter payment report queries by branch aliases</td><td class="diff"><span class="add">+59</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 31, 2026">Handle branch name aliases in payment reports</td><td class="diff"><span class="add">+40</span> <span class="del">&minus;21</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-07-30">Thursday, July 30, 2026</time></th><td class="msg" data-date="Thursday, July 30, 2026">Center shipment title and simplify navigation styling</td><td class="diff"><span class="add">+20</span> <span class="del">&minus;25</span></td></tr>
+<tr><td class="msg" data-date="Thursday, July 30, 2026">Add navigation between shipments in admin view</td><td class="diff"><span class="add">+33</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Thursday, July 30, 2026">Add branch to payment records</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-07-29">Wednesday, July 29, 2026</time></th><td class="msg" data-date="Wednesday, July 29, 2026">Handle Lynk payment type in checkout payment reset</td><td class="diff"><span class="add">+11</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, July 29, 2026">Prevent double-charging prepaid deliveries and fix Lynk payment handling</td><td class="diff"><span class="add">+260</span> <span class="del">&minus;18</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="3" class="date"><time datetime="2026-07-28">Tuesday, July 28, 2026</time></th><td class="msg" data-date="Tuesday, July 28, 2026">Prevent double submission of checkout forms</td><td class="diff"><span class="add">+51</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 28, 2026">Make checkouts idempotent with database transactions</td><td class="diff"><span class="add">+522</span> <span class="del">&minus;239</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 28, 2026">Extract shared staff discount query method</td><td class="diff"><span class="add">+40</span> <span class="del">&minus;19</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-07-24">Friday, July 24, 2026</time></th><td class="msg" data-date="Friday, July 24, 2026">Add 6 month and 1 year filters to aged uncollected report</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-07-23">Thursday, July 23, 2026</time></th><td class="msg" data-date="Thursday, July 23, 2026">Update East Kings House branch opening hours</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-07-22">Wednesday, July 22, 2026</time></th><td class="msg" data-date="Wednesday, July 22, 2026">Consolidate inventory methods into aged uncollected report</td><td class="diff"><span class="add">+33</span> <span class="del">&minus;156</span></td></tr>
+<tr><td class="msg" data-date="Wednesday, July 22, 2026">Disable high-value packages menu and routes</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="8" class="date"><time datetime="2026-07-21">Tuesday, July 21, 2026</time></th><td class="msg" data-date="Tuesday, July 21, 2026">Add Branch Code column to custodial log PDF</td><td class="diff"><span class="add">+54</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 21, 2026">Add Branch Code column to custodial log PDF</td><td class="diff"><span class="add">+3</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 21, 2026">Add Branch Code column to custodial log PDF</td><td class="diff"><span class="add">+11</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 21, 2026">Remove high value items card from shipment view</td><td class="diff"><span class="add">+6</span> <span class="del">&minus;43</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 21, 2026">Add custodial log PDF download for high-value shipments</td><td class="diff"><span class="add">+351</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 21, 2026">Remove table horizontal scroll on medium screens and larger</td><td class="diff"><span class="add">+35</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 21, 2026">Remove table horizontal scroll on medium screens and larger</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 21, 2026">Hide journey rail on small screens</td><td class="diff"><span class="add">+5</span> <span class="del">&minus;3</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="8" class="date"><time datetime="2026-07-17">Friday, July 17, 2026</time></th><td class="msg" data-date="Friday, July 17, 2026">Add vehicle motion, smoke effects, and ambient animations to flat-hero</td><td class="diff"><span class="add">+258</span> <span class="del">&minus;14</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 17, 2026">Refactor journey animation from scroll-driven to timer-based</td><td class="diff"><span class="add">+13</span> <span class="del">&minus;11</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 17, 2026">Polish deliveries page layout and styling</td><td class="diff"><span class="add">+348</span> <span class="del">&minus;238</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 17, 2026">Implement custom PDF export with Blade template</td><td class="diff"><span class="add">+241</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 17, 2026">Add delivery export with CSV, XLSX and PDF formats</td><td class="diff"><span class="add">+131</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 17, 2026">Add status, date filters and export to high-value packages</td><td class="diff"><span class="add">+196</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 17, 2026">Add null coalescing to payment ID variables</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Friday, July 17, 2026">Disable scroll-driven animation, use timed loop for all devices</td><td class="diff"><span class="add">+4</span> <span class="del">&minus;4</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-07-16">Thursday, July 16, 2026</time></th><td class="msg" data-date="Thursday, July 16, 2026">Add close button to error alert in QR config</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Thursday, July 16, 2026">Add payment ID search to admin report</td><td class="diff"><span class="add">+26</span> <span class="del">&minus;3</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-07-15">Wednesday, July 15, 2026</time></th><td class="msg" data-date="Wednesday, July 15, 2026">Add refund request and management system</td><td class="diff"><span class="add">+1,665</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="8" class="date"><time datetime="2026-07-14">Tuesday, July 14, 2026</time></th><td class="msg" data-date="Tuesday, July 14, 2026">Style customs number as badge in customs recon report</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 14, 2026">Style customs number as badge in customs recon report</td><td class="diff"><span class="add">+1</span> <span class="del">&minus;1</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 14, 2026">Add customs duty fee application with splitting</td><td class="diff"><span class="add">+271</span> <span class="del">&minus;3</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 14, 2026">Add id to ready packages table</td><td class="diff"><span class="add">+64</span> <span class="del">&minus;4</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 14, 2026">Improve location delete button styling and confirmation</td><td class="diff"><span class="add">+8</span> <span class="del">&minus;8</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 14, 2026">Add delivery location creation and deletion</td><td class="diff"><span class="add">+81</span> <span class="del">&minus;0</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 14, 2026">Style customs number as badge in customs recon report</td><td class="diff"><span class="add">+12</span> <span class="del">&minus;2</span></td></tr>
+<tr><td class="msg" data-date="Tuesday, July 14, 2026">Add Customs Recon report with CSV/XLSX export</td><td class="diff"><span class="add">+333</span> <span class="del">&minus;0</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="1" class="date"><time datetime="2026-07-01">Wednesday, July 1, 2026</time></th><td class="msg" data-date="Wednesday, July 1, 2026">Add status 28 to detained statuses</td><td class="diff"><span class="add">+2</span> <span class="del">&minus;2</span></td></tr>
+<tr class=first><th scope="rowgroup" rowspan="2" class="date"><time datetime="2026-06-26">Friday, June 26, 2026</time></th><td class="msg" data-date="Friday, June 26, 2026">Revert &quot;Conditionally load Tailwind CDN to prevent browser freezes&quot;</td><td class="diff"><span class="add">+0</span> <span class="del">&minus;35</span></td></tr>
+<tr><td class="msg" data-date="Friday, June 26, 2026">Conditionally load Tailwind CDN to prevent browser freezes</td><td class="diff"><span class="add">+35</span> <span class="del">&minus;0</span></td></tr>
+</tbody>
+</table>
 </main>
 </body>
 </html>
